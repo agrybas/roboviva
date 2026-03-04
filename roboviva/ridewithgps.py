@@ -265,9 +265,9 @@ def _instructionStrToCueInstruction(instruction_str):
   '''Maps a RWGPS 'instruction' string to a cue.Instruction. If the instruction
   string doesn't match a known one, the original instruction string is
   returned'''
-  if instruction_str == "Left":
+  if instruction_str in ("Left", "Slight Left", "Sharp Left"):
     return cue.Instruction.LEFT
-  elif instruction_str == "Right":
+  elif instruction_str in ("Right", "Slight Right", "Sharp Right"):
     return cue.Instruction.RIGHT
   elif instruction_str == "Straight":
     return cue.Instruction.STRAIGHT
@@ -275,7 +275,7 @@ def _instructionStrToCueInstruction(instruction_str):
     return cue.Instruction.PIT
   elif instruction_str == "Danger":
     return cue.Instruction.DANGER
-  elif instruction_str in ("Start", "End", "Generic"):
+  elif instruction_str in ("Start", "End", "Generic", "Control"):
     return cue.Instruction.NONE
   elif instruction_str == "Summit":
     return cue.Instruction.SUMMIT

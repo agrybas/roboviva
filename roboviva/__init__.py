@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from flask import Flask
-from flask.ext import shelve
+import flask_shelve as shelve
 from .views import blueprint
 
 import sys
