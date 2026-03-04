@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import flask
-import flask.ext
+import flask_shelve as shelve
 
 import roboviva.ridewithgps
 import roboviva.latex
@@ -40,7 +40,7 @@ def handle_request(route_id):
   # Roboviva uses the HTTP ETag header to determine if it's worth
   # re-downloading the route information from RideWithGPS, so step one is
   # determining if we have an ETag already on hand:
-  hash_db = flask.ext.shelve.get_shelve('c')
+  hash_db = shelve.get_shelve('c')
   db_key  = str(route_id)
   cached_etag = None
   if db_key in hash_db:
@@ -130,7 +130,7 @@ def get_pdf(route_id):
 
 @blueprint.route('/cache')
 def dump_cache():
-  hash_db = flask.ext.shelve.get_shelve('c')
+  hash_db = shelve.get_shelve('c')
   ents = []
   for route_id in hash_db:
     md5_sum, ts = hash_db[route_id]
@@ -162,7 +162,7 @@ def dump_cache():
 
 @blueprint.route('/cache/remove/<int:route_id>')
 def remove_route(route_id):
-  hash_db = flask.ext.shelve.get_shelve('c')
+  hash_db = shelve.get_shelve('c')
   ret = ""
   db_key = str(route_id)
   if db_key in hash_db:
@@ -176,7 +176,7 @@ def remove_route(route_id):
 def purge_cache(delete_older_than):
   log = flask.current_app.logger
   cache_dir = flask.current_app.config['PDF_CACHE_DIR']
-  hash_db = flask.ext.shelve.get_shelve('c')
+  hash_db = shelve.get_shelve('c')
   log.warning("[purge] starting: age: %s", delete_older_than)
   bytes_deleted   = 0
   bytes_remaining = 0
