@@ -59,6 +59,7 @@ def _escape(text):
   ret = ret.replace("%", r'\%')
   ret = ret.replace('{', r'\{')
   ret = ret.replace('}', r'\}')
+  ret = ret.replace(u"\u200B", r'\hspace{0pt}')
   return ret
 
 def _format(text):
