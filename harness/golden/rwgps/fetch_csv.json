@@ -1,0 +1,184 @@
+[
+  {
+    "name": "basic", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.csv"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": null, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 1.0, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 1.0, 
+            "color": "Gray", 
+            "description": "A", 
+            "for_distance": 1.0, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 2.0, 
+            "color": "None", 
+            "description": "B", 
+            "for_distance": null, 
+            "instruction": "L", 
+            "modifier": "", 
+            "note": "note here"
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 2.0, 
+        "name": null
+      }
+    }
+  }, 
+  {
+    "name": "header_pruned", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.csv"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": null, 
+        "entries": [
+          {
+            "absolute_distance": 1.0, 
+            "color": "Gray", 
+            "description": "A", 
+            "for_distance": null, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 1.0, 
+        "name": null
+      }
+    }
+  }, 
+  {
+    "name": "embedded_newline_in_quoted_field", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.csv"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": null, 
+        "entries": [
+          {
+            "absolute_distance": 1.0, 
+            "color": "Gray", 
+            "description": "Turn right,then immediately left", 
+            "for_distance": null, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 1.0, 
+        "name": null
+      }
+    }
+  }, 
+  {
+    "name": "trailing_blank_line", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.csv"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": null, 
+        "entries": [
+          {
+            "absolute_distance": 1.0, 
+            "color": "Gray", 
+            "description": "A", 
+            "for_distance": null, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 1.0, 
+        "name": null
+      }
+    }
+  }, 
+  {
+    "name": "not_modified_304", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"cached\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {
+            "If-none-match": "W/\"cached\""
+          }, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.csv"
+        }
+      ], 
+      "route": null
+    }
+  }, 
+  {
+    "name": "html_instead_of_csv", 
+    "ok": true, 
+    "result": {
+      "error": {
+        "message": "float() argument must be a string or a number", 
+        "type": "TypeError"
+      }, 
+      "ok": false, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.csv"
+        }
+      ]
+    }
+  }
+]

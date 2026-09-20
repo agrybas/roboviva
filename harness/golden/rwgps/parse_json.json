@@ -1,0 +1,1027 @@
+[
+  {
+    "name": "no_course_points", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 328.084, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 0.9999999996180481, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.9999999996180481, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 0.9999999996180481, 
+        "name": "R"
+      }
+    }
+  }, 
+  {
+    "name": "single_point", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 328.084, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 0.4970969536, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.4970969536, 
+            "color": "Gray", 
+            "description": "Foo", 
+            "for_distance": 0.5029030460180481, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.9999999996180481, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 0.9999999996180481, 
+        "name": "R"
+      }
+    }
+  }, 
+  {
+    "name": "missing_n_field", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 328.084, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 0.0621371192, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.0621371192, 
+            "color": "Gray", 
+            "description": "", 
+            "for_distance": 0.9378628804180481, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.9999999996180481, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 0.9999999996180481, 
+        "name": "R"
+      }
+    }
+  }, 
+  {
+    "name": "missing_description_field", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 328.084, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 0.0621371192, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.0621371192, 
+            "color": "Gray", 
+            "description": "Foo", 
+            "for_distance": 0.9378628804180481, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.9999999996180481, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 0.9999999996180481, 
+        "name": "R"
+      }
+    }
+  }, 
+  {
+    "name": "note_present", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 328.084, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 0.0621371192, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.0621371192, 
+            "color": "Gray", 
+            "description": "Foo", 
+            "for_distance": 0.9378628804180481, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": "Bring cash"
+          }, 
+          {
+            "absolute_distance": 0.9999999996180481, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 0.9999999996180481, 
+        "name": "R"
+      }
+    }
+  }, 
+  {
+    "name": "quick_turn_cluster", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 328.084, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 0.621371192, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.621371192, 
+            "color": "Gray", 
+            "description": "Foo", 
+            "for_distance": 0.03106855959999999, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.6524397516, 
+            "color": "Gray", 
+            "description": "Foo", 
+            "for_distance": 0.03106855959999999, 
+            "instruction": "R", 
+            "modifier": "Q", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.6835083112, 
+            "color": "Gray", 
+            "description": "Foo", 
+            "for_distance": 0.5592340728, 
+            "instruction": "R", 
+            "modifier": "Q", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 1.242742384, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 1.242742384, 
+        "name": "R"
+      }
+    }
+  }, 
+  {
+    "name": "slight_turn_by_description", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 328.084, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 0.621371192, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.621371192, 
+            "color": "Gray", 
+            "description": "Foo", 
+            "for_distance": 0.621371192, 
+            "instruction": "R", 
+            "modifier": "B", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 1.242742384, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 1.242742384, 
+        "name": "R"
+      }
+    }
+  }, 
+  {
+    "name": "slight_case_sensitive", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 328.084, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 0.621371192, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.621371192, 
+            "color": "Gray", 
+            "description": "Foo", 
+            "for_distance": 0.621371192, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 1.242742384, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 1.242742384, 
+        "name": "R"
+      }
+    }
+  }, 
+  {
+    "name": "zero_distance_first_point", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 328.084, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Foo", 
+            "for_distance": 0.0310685596, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.0310685596, 
+            "color": "Gray", 
+            "description": "Foo", 
+            "for_distance": 1.2116738244, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 1.242742384, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 1.242742384, 
+        "name": "R"
+      }
+    }
+  }, 
+  {
+    "name": "custom_instruction_tag", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 328.084, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 0.621371192, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.621371192, 
+            "color": "Yellow", 
+            "description": "Sharp bend", 
+            "for_distance": 0.621371192, 
+            "instruction": "U", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 1.242742384, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 1.242742384, 
+        "name": "R"
+      }
+    }
+  }, 
+  {
+    "name": "start_tag_promotes_entry", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 328.084, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Real start", 
+            "for_distance": 0.621371192, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.621371192, 
+            "color": "Gray", 
+            "description": "Foo", 
+            "for_distance": 0.621371192, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 1.242742384, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 1.242742384, 
+        "name": "R"
+      }
+    }
+  }, 
+  {
+    "name": "all_mapped_instruction_types", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 328.084, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 0.310685596, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.310685596, 
+            "color": "None", 
+            "description": "Point 0", 
+            "for_distance": 0.310685596, 
+            "instruction": "L", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.621371192, 
+            "color": "None", 
+            "description": "Point 1", 
+            "for_distance": 0.310685596, 
+            "instruction": "L", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.932056788, 
+            "color": "None", 
+            "description": "Point 2", 
+            "for_distance": 0.310685596, 
+            "instruction": "L", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 1.242742384, 
+            "color": "Gray", 
+            "description": "Point 3", 
+            "for_distance": 0.3106855959999999, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 1.55342798, 
+            "color": "Gray", 
+            "description": "Point 4", 
+            "for_distance": 0.3106855960000001, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 1.864113576, 
+            "color": "Gray", 
+            "description": "Point 5", 
+            "for_distance": 0.3106855960000001, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 2.174799172, 
+            "color": "None", 
+            "description": "Point 6", 
+            "for_distance": 0.3106855959999999, 
+            "instruction": "S", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 2.485484768, 
+            "color": "Yellow", 
+            "description": "Point 7", 
+            "for_distance": 0.3106855959999999, 
+            "instruction": "PIT", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 2.796170364, 
+            "color": "Yellow", 
+            "description": "Point 8", 
+            "for_distance": 0.3106855959999999, 
+            "instruction": "PIT", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 3.10685596, 
+            "color": "Yellow", 
+            "description": "Point 9", 
+            "for_distance": 0.31068559600000034, 
+            "instruction": "!", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 3.417541556, 
+            "color": "Gray", 
+            "description": "Point 10", 
+            "for_distance": 0.3106855959999999, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 3.728227152, 
+            "color": "Gray", 
+            "description": "Point 11", 
+            "for_distance": 0.31068559600000034, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 4.038912748, 
+            "color": "None", 
+            "description": "Point 12", 
+            "for_distance": 0.3106855959999999, 
+            "instruction": "^", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 4.349598344, 
+            "color": "None", 
+            "description": "Point 13", 
+            "for_distance": 0.3106855959999999, 
+            "instruction": "C4", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 4.66028394, 
+            "color": "None", 
+            "description": "Point 14", 
+            "for_distance": 0.3106855959999999, 
+            "instruction": "C3", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 4.970969536, 
+            "color": "None", 
+            "description": "Point 15", 
+            "for_distance": 0.3106855959999999, 
+            "instruction": "C2", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 5.281655132, 
+            "color": "None", 
+            "description": "Point 16", 
+            "for_distance": 0.3106855959999999, 
+            "instruction": "C1", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 5.592340728, 
+            "color": "None", 
+            "description": "Point 17", 
+            "for_distance": 0.3106855959999999, 
+            "instruction": "CHC", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 5.903026324, 
+            "color": "None", 
+            "description": "Point 18", 
+            "for_distance": 6.524397516, 
+            "instruction": "+", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 12.42742384, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 12.42742384, 
+        "name": "R"
+      }
+    }
+  }, 
+  {
+    "name": "unmapped_instruction_types", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 328.084, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 0.310685596, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.310685596, 
+            "color": "None", 
+            "description": "Make a U-turn", 
+            "for_distance": 0.310685596, 
+            "instruction": "Uturn", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.621371192, 
+            "color": "None", 
+            "description": "Steep climb ahead", 
+            "for_distance": 0.310685596, 
+            "instruction": "Climb", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.932056788, 
+            "color": "None", 
+            "description": "Descend", 
+            "for_distance": 0.310685596, 
+            "instruction": "Valley", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 1.242742384, 
+            "color": "None", 
+            "description": "Keep right", 
+            "for_distance": 0.3106855959999999, 
+            "instruction": "right", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 1.55342798, 
+            "color": "None", 
+            "description": "Keep left", 
+            "for_distance": 0.3106855960000001, 
+            "instruction": "left", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 1.864113576, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 1.864113576, 
+        "name": "R"
+      }
+    }
+  }, 
+  {
+    "name": "unicode_and_zwsp", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 328.084, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 0.310685596, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.310685596, 
+            "color": "Gray", 
+            "description": "A/​B", 
+            "for_distance": 0.310685596, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.621371192, 
+            "color": "Gray", 
+            "description": "Straße", 
+            "for_distance": 0.621371192, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 1.242742384, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 1.242742384, 
+        "name": "Rue de l'Église"
+      }
+    }
+  }, 
+  {
+    "name": "zero_elevation_gain", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 0.0, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 0.0621371192, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.0621371192, 
+            "color": "Gray", 
+            "description": "Foo", 
+            "for_distance": 0.9378628804180481, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.9999999996180481, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 0.9999999996180481, 
+        "name": "R"
+      }
+    }
+  }, 
+  {
+    "name": "unit_conversion", 
+    "ok": true, 
+    "result": {
+      "etag": "W/\"deadbeef\"", 
+      "ok": true, 
+      "requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/1.json?api_key=None&version=2"
+        }
+      ], 
+      "route": {
+        "elevation_gain_ft": 1000.000032, 
+        "entries": [
+          {
+            "absolute_distance": 0.0, 
+            "color": "Gray", 
+            "description": "Start of route", 
+            "for_distance": 0.9999999996180481, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.9999999996180481, 
+            "color": "Gray", 
+            "description": "Foo", 
+            "for_distance": 0.0, 
+            "instruction": "R", 
+            "modifier": "", 
+            "note": ""
+          }, 
+          {
+            "absolute_distance": 0.9999999996180481, 
+            "color": "Gray", 
+            "description": "End of route", 
+            "for_distance": null, 
+            "instruction": "", 
+            "modifier": "", 
+            "note": ""
+          }
+        ], 
+        "id": 1, 
+        "length_mi": 0.9999999996180481, 
+        "name": "R"
+      }
+    }
+  }
+]

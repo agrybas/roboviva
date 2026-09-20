@@ -1,0 +1,54 @@
+
+\documentclass[11pt]{article}
+\usepackage[left=0.20in,right=0.20in,top=0.7in,bottom=0.25in]{geometry}
+\geometry{letterpaper}
+\usepackage{colortbl}
+\usepackage{supertabular}
+\usepackage{amsmath}
+\usepackage{helvet}
+\usepackage{fourier}
+\usepackage{bbding}
+\usepackage[alpine]{ifsym}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small \emph{Around the block... with calculus! (0.8 mi / 22 ft)}}
+\rhead{\small \emph{Route \#5334050}}
+\fancyfoot[C]{\footnotesize{\emph{Page~\thepage~of~\pageref{LastPage}}}}
+\setlength{\footskip}{0.0in}
+\setlength{\headsep}{0.2in}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.15}
+\twocolumn
+\tablehead{
+  \hline
+  \rowcolor[gray]{0}
+  \textbf{\textcolor{white}{Go}} &
+  \textbf{\textcolor{white}{At}} &
+  \textbf{\textcolor{white}{On}} &
+  \textbf{\textcolor{white}{For}} \\
+  \hline
+}
+\tabletail{\hline}
+\tablelasttail{\hline}
+\begin{center}
+  \begin{supertabular}{|c|p{0.30in}|p{2.25in}|l|}
+  \hline
+\rowcolor[gray]{0.8} \textbf{} &   0.0 & Start of route &   0.1 \\ \hline
+\rowcolor[gray]{0.8} \textbf{R} &   0.1 & Pineapple St \newline \textit{\textbackslash [ \textbackslash sum\{\textbackslash vec\{F\}\}= m\textbackslash dot\{v\} \textbackslash ]} &   0.1 \\ \hline
+\rowcolor[gray]{0.8} \textbf{QR} &   0.2 & Henry St Hill \#3 \newline \textit{\textbackslash [ \textbackslash int\textunderscore \{0\}^\{\textbackslash frac\{\textbackslash pi\} \{2\}\}\textbackslash left(\textbackslash frac\{x\}\{\textbackslash sin x\}\textbackslash right)^2dx \textbackslash ]} &   0.1 \\ \hline
+\rowcolor{yellow} \textbf{PIT} &   0.3 & \textbackslash [ \textbackslash Delta V = v\textunderscore e \textbackslash ln \textbackslash frac\{m\textunderscore 0\}\{m\textunderscore 1\} \textbackslash ] &   0.1 \\ \hline
+\rowcolor[gray]{0.8} \textbf{R} &   0.4 & Montague St &   0.1 \\ \hline
+\rowcolor[gray]{0.8} \textbf{QR} &   0.5 & Hicks St &   0.2 \\ \hline
+ \textbf{L} &   0.7 & Clark St &   0.0 \\ \hline
+ \textbf{QL} &   0.8 & Willow St &   0.1 \\ \hline
+\rowcolor[gray]{0.8} \textbf{} &   0.8 & End of route &  \\ \hline
+
+\end{supertabular}
+\end{center}
+\end{document}

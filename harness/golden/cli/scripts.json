@@ -1,0 +1,66 @@
+[
+  {
+    "name": "make_latex_no_args", 
+    "ok": true, 
+    "result": {
+      "files_created": [], 
+      "returncode": 1, 
+      "stderr_tail": [], 
+      "stdout": "Usage: /repo/make_latex.py route_id\n"
+    }
+  }, 
+  {
+    "name": "make_latex_too_many_args", 
+    "ok": true, 
+    "result": {
+      "files_created": [], 
+      "returncode": 1, 
+      "stderr_tail": [], 
+      "stdout": "Usage: /repo/make_latex.py route_id\n"
+    }
+  }, 
+  {
+    "name": "make_latex_non_numeric", 
+    "ok": true, 
+    "result": {
+      "files_created": [], 
+      "returncode": 1, 
+      "stderr_tail": [
+        "ValueError: invalid literal for int() with base 10: 'abc'"
+      ], 
+      "stdout": ""
+    }
+  }, 
+  {
+    "name": "make_latex_happy", 
+    "ok": true, 
+    "result": {
+      "files_created": [], 
+      "returncode": 0, 
+      "stderr_tail": [], 
+      "stdout": "%% Downloading route from ridewithgps... % Done [etag: W/\"v1\"]\n\n\\documentclass[11pt]{article}\n\\usepackage[left=0.20in,right=0.20in,top=0.7in,bottom=0.25in]{geometry}\n\\geometry{letterpaper}\n\\usepackage{colortbl}\n\\usepackage{supertabular}\n\\usepackage{amsmath}\n\\usepackage{helvet}\n\\usepackage{fourier}\n\\usepackage{bbding}\n\\usepackage[alpine]{ifsym}\n\\usepackage{fancyhdr}\n\\usepackage{lastpage}\n\n\\pagestyle{fancy}\n\\fancyhf{}\n\\lhead{\\small \\emph{Probe Route (1.0 mi / 328 ft)}}\n\\rhead{\\small \\emph{Route \\#123}}\n\\fancyfoot[C]{\\footnotesize{\\emph{Page~\\thepage~of~\\pageref{LastPage}}}}\n\\setlength{\\footskip}{0.0in}\n\\setlength{\\headsep}{0.2in}\n\n\\renewcommand{\\familydefault}{\\sfdefault}\n\n\\begin{document}\n\\renewcommand{\\arraystretch}{1.15}\n\\twocolumn\n\\tablehead{\n  \\hline\n  \\rowcolor[gray]{0}\n  \\textbf{\\textcolor{white}{Go}} &\n  \\textbf{\\textcolor{white}{At}} &\n  \\textbf{\\textcolor{white}{On}} &\n  \\textbf{\\textcolor{white}{For}} \\\\\n  \\hline\n}\n\\tabletail{\\hline}\n\\tablelasttail{\\hline}\n\\begin{center}\n  \\begin{supertabular}{|c|p{0.30in}|p{2.25in}|l|}\n  \\hline\n\\rowcolor[gray]{0.8} \\textbf{} &   0.0 & Start of route &   0.2 \\\\ \\hline\n\\rowcolor[gray]{0.8} \\textbf{R} &   0.2 & Street 0 &   0.8 \\\\ \\hline\n\\rowcolor[gray]{0.8} \\textbf{} &   1.0 & End of route &  \\\\ \\hline\n\n\\end{supertabular}\n\\end{center}\n\\end{document}\n\n"
+    }
+  }, 
+  {
+    "name": "make_pdf_no_args", 
+    "ok": true, 
+    "result": {
+      "files_created": [], 
+      "returncode": 1, 
+      "stderr_tail": [], 
+      "stdout": "Usage: /repo/make_pdf.py route_id\n"
+    }
+  }, 
+  {
+    "name": "make_pdf_happy", 
+    "ok": true, 
+    "result": {
+      "files_created": [
+        "123.pdf"
+      ], 
+      "returncode": 0, 
+      "stderr_tail": [], 
+      "stdout": "Downloading route from ridewithgps...  Done [etag: W/\"v1\"]\nGenerating latex...  Done.\nRendering PDF to '123.pdf'...  Done.\n"
+    }
+  }
+]

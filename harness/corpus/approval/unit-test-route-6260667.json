@@ -1,0 +1,27 @@
+{
+  "provenance": {
+    "note": "route.track_points removed; the legacy parser never reads it (ridewithgps.py:122-171). Everything else is verbatim, re-serialized with sorted keys.",
+    "original_body_bytes": 3627,
+    "original_body_sha256": "0ef6197cd10fda84f84a2d546a45374523d7f3884b1ddf063bed988d7dad3fc6",
+    "recorded_from": "live ridewithgps.com",
+    "track_points_dropped": 17
+  },
+  "request_url": "http://ridewithgps.com/routes/6260667.json?api_key=None&version=2",
+  "response": {
+    "body": "{\"route\": {\"activity_types\": [], \"administrative_area\": \"NY\", \"bounding_box\": [{\"lat\": 40.6951, \"lng\": -73.99553}, {\"lat\": 40.69854, \"lng\": -73.99267}], \"country_code\": \"US\", \"course_points\": [{\"_e\": 1, \"d\": 309.8, \"i\": 3, \"n\": \"[Custom] Turn right onto A\", \"t\": \"Right\", \"x\": -73.994289, \"y\": 40.69854}, {\"_e\": 1, \"d\": 451.1, \"i\": 5, \"n\": \"Turn right onto B\", \"t\": \"Right\", \"x\": -73.99272, \"y\": 40.698099}, {\"_e\": 1, \"d\": 584.7, \"description\": \"Test note\", \"i\": 8, \"n\": \"CVS on Right\", \"t\": \"Food\", \"x\": -73.993259, \"y\": 40.69697}, {\"_e\": 1, \"d\": 763.6, \"i\": 11, \"n\": \"Turn left onto C\", \"t\": \"Left\", \"x\": -73.993979, \"y\": 40.69546}, {\"_e\": 1, \"d\": 872.8, \"i\": 14, \"n\": \"[End] Custom end entry\", \"t\": \"Generic\", \"x\": -73.992762, \"y\": 40.695127}], \"created_at\": \"2014-10-13T06:16:48-07:00\", \"description\": \"\", \"difficulty\": \"casual\", \"distance\": 881.291, \"elevation_gain\": 4.95582, \"elevation_loss\": 3.03677, \"first_lat\": 40.69592, \"first_lng\": -73.99553, \"has_course_points\": true, \"highlighted_photo_checksum\": null, \"highlighted_photo_id\": 0, \"id\": 6260667, \"last_lat\": 40.6951, \"last_lng\": -73.99267, \"locality\": \"NYC\", \"metrics\": {\"distance\": 881.2000000000002, \"ele\": {\"_avg\": 24.788235294117648, \"_max\": 26.6, \"_min\": 21.5, \"avg\": 24.788235294117648, \"max\": 26.6, \"max_i\": 10, \"min\": 21.5, \"min_i\": 3}, \"ele_gain\": 4.955469330696452, \"ele_loss\": 3.0365502493972585, \"endElevation\": 26.2, \"grade\": {\"_avg\": 0.17647058823529416, \"_max\": 1.7, \"_min\": -1.9, \"avg\": 0.18750000000000006, \"max\": 1.0622976032189042, \"max_i\": 9, \"min\": -0.9385940029850551, \"min_i\": 3}, \"hills\": [], \"numPoints\": 17, \"routeSummary\": {\"-1\": 76.90000000000003, \"-10\": 0, \"-11\": 0, \"-12\": 0, \"-13\": 0, \"-14\": 0, \"-15\": 0, \"-2\": 0, \"-3\": 0, \"-4\": 0, \"-5\": 0, \"-6\": 0, \"-7\": 0, \"-8\": 0, \"-9\": 0, \"0\": 517.0000000000001, \"1\": 234.5, \"10\": 0, \"11\": 0, \"12\": 0, \"13\": 0, \"14\": 0, \"15\": 0, \"2\": 0, \"3\": 0, \"4\": 0, \"5\": 0, \"6\": 0, \"7\": 0, \"8\": 0, \"9\": 0}, \"startElevation\": 24.1, \"v\": 1}, \"name\": \"Roboviva Unit Test Route\", \"nav_enabled\": false, \"pavement_type\": null, \"pavement_type_id\": null, \"photos\": [], \"points_of_interest\": [], \"postal_code\": \"11201\", \"privacy_code\": null, \"rememberable\": false, \"segment_matches\": null, \"surface\": \"paved\", \"tag_names\": [], \"terrain\": \"flat\", \"track_id\": \"ec70a7096c65777a98080100\", \"track_type\": \"point_to_point\", \"unpaved_pct\": 0, \"updated_at\": \"2022-01-20T12:22:18-08:00\", \"user\": {\"account_level\": 1, \"administrative_area\": \"New York\", \"created_at\": \"2014-04-09T05:57:47-07:00\", \"description\": null, \"highlighted_photo_checksum\": null, \"highlighted_photo_id\": 0, \"id\": 256278, \"interests\": null, \"locality\": \"\", \"location\": \"New York\", \"name\": \"Mucow\", \"total_trip_distance\": 0, \"total_trip_duration\": 0, \"total_trip_elevation_gain\": 0.0}, \"user_id\": 256278, \"visibility\": 0}, \"type\": \"route\"}",
+    "content_type": "application/json; charset=utf-8",
+    "etag": "W/\"0ef6197cd10fda84f84a2d546a453745\"",
+    "final_url": "https://ridewithgps.com/routes/6260667.json?api_key=None&version=2",
+    "status": 200
+  },
+  "route_id": 6260667,
+  "slug": "unit-test-route",
+  "summary": {
+    "course_points": 5,
+    "metrics_distance_m": 881.2000000000002,
+    "metrics_ele_gain_m": 4.955469330696452,
+    "name": "Roboviva Unit Test Route",
+    "visibility": 0
+  },
+  "why": "The original fixture and the only known source of [Custom] and [End] bracket tags: custom-instruction override plus AdjustStartAndEnd."
+}

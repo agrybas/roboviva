@@ -1,0 +1,158 @@
+[
+  {
+    "name": "defaults",
+    "why": "Minimal entry, all optionals defaulted.",
+    "entry": {
+      "instruction": "",
+      "description": "",
+      "absolute_distance": 0.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": null,
+      "color": "None"
+    }
+  },
+  {
+    "name": "full",
+    "why": "Every field populated.",
+    "entry": {
+      "instruction": "R",
+      "description": "Foo St.",
+      "absolute_distance": 1.25,
+      "note": "watch the gravel",
+      "modifier": "Q",
+      "for_distance": 2.5,
+      "color": "Gray"
+    }
+  },
+  {
+    "name": "for_distance_none",
+    "why": "for_distance None renders as 5 spaces (cue.py:87-90).",
+    "entry": {
+      "instruction": "L",
+      "description": "Bar",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": null,
+      "color": "None"
+    }
+  },
+  {
+    "name": "for_distance_zero",
+    "why": "for_distance of exactly 0.0 is FALSY, so it renders as 5 spaces just like None -- a real zero-length leg is indistinguishable from a missing one (cue.py:87).",
+    "entry": {
+      "instruction": "L",
+      "description": "Bar",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 0.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "for_distance_small",
+    "why": "A small but non-zero leg does render.",
+    "entry": {
+      "instruction": "L",
+      "description": "Bar",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 0.01,
+      "color": "None"
+    }
+  },
+  {
+    "name": "distance_from_string",
+    "why": "absolute_distance is coerced with float() (cue.py:79), so a string is accepted -- the CSV path relies on this.",
+    "entry": {
+      "instruction": "L",
+      "description": "Bar",
+      "absolute_distance": "3.5",
+      "note": "",
+      "modifier": "",
+      "for_distance": null,
+      "color": "None"
+    }
+  },
+  {
+    "name": "distance_from_int",
+    "why": "int is coerced to float too.",
+    "entry": {
+      "instruction": "L",
+      "description": "Bar",
+      "absolute_distance": 4,
+      "note": "",
+      "modifier": "",
+      "for_distance": null,
+      "color": "None"
+    }
+  },
+  {
+    "name": "distance_negative",
+    "why": "No validation anywhere; negatives pass through.",
+    "entry": {
+      "instruction": "L",
+      "description": "Bar",
+      "absolute_distance": -1.5,
+      "note": "",
+      "modifier": "",
+      "for_distance": null,
+      "color": "None"
+    }
+  },
+  {
+    "name": "distance_large",
+    "why": "Width formatting with %5.2f on a big number.",
+    "entry": {
+      "instruction": "L",
+      "description": "Bar",
+      "absolute_distance": 1234.567,
+      "note": "",
+      "modifier": "",
+      "for_distance": null,
+      "color": "None"
+    }
+  },
+  {
+    "name": "unicode_description",
+    "why": "Non-ASCII must survive repr under py2.",
+    "entry": {
+      "instruction": "L",
+      "description": "Rue de l'Église",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": null,
+      "color": "None"
+    }
+  },
+  {
+    "name": "zwsp_description",
+    "why": "U+200B in a description.",
+    "entry": {
+      "instruction": "L",
+      "description": "A/​B",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": null,
+      "color": "None"
+    }
+  },
+  {
+    "name": "custom_instruction",
+    "why": "A [tag]-derived instruction.",
+    "entry": {
+      "instruction": "U-Turn",
+      "description": "Bar",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": null,
+      "color": "None"
+    }
+  }
+]

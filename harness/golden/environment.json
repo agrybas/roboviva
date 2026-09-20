@@ -1,0 +1,34 @@
+{
+  "default_encoding": "utf8", 
+  "enums": {
+    "Color": {
+      "GRAY": "Gray", 
+      "NONE": "None", 
+      "YELLOW": "Yellow"
+    }, 
+    "Instruction": {
+      "CAT_1": "C1", 
+      "CAT_2": "C2", 
+      "CAT_3": "C3", 
+      "CAT_4": "C4", 
+      "CAT_5": "C5", 
+      "CAT_HC": "CHC", 
+      "CROSSES": "X", 
+      "DANGER": "!", 
+      "FIRST_AID": "+", 
+      "LEFT": "L", 
+      "NONE": "", 
+      "PIT": "PIT", 
+      "RIGHT": "R", 
+      "STRAIGHT": "S", 
+      "SUMMIT": "^"
+    }, 
+    "Modifier": {
+      "NONE": "", 
+      "QUICK": "Q", 
+      "SLIGHT": "B"
+    }
+  }, 
+  "pdflatex": "pdfTeX 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian)", 
+  "python": "2.7.18 (default, Sep 19 2023, 07:10:59)  [GCC 10.2.1 20210110]"
+}

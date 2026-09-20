@@ -1,0 +1,118 @@
+[
+  {
+    "bytes": 1040, 
+    "file": "latex/documents/minimal.tex", 
+    "name": "minimal", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1175, 
+    "file": "latex/documents/named_route.tex", 
+    "name": "named_route", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1164, 
+    "file": "latex/documents/no_elevation.tex", 
+    "name": "no_elevation", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1160, 
+    "file": "latex/documents/zero_elevation.tex", 
+    "name": "zero_elevation", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1171, 
+    "file": "latex/documents/elevation_truncated.tex", 
+    "name": "elevation_truncated", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1237, 
+    "file": "latex/documents/name_with_latex_specials.tex", 
+    "name": "name_with_latex_specials", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1180, 
+    "file": "latex/documents/name_with_emphasis.tex", 
+    "name": "name_with_emphasis", 
+    "ok": true
+  }, 
+  {
+    "error": {
+      "message": "%d format: a number is required, not unicode", 
+      "type": "TypeError"
+    }, 
+    "name": "string_route_id", 
+    "ok": false
+  }, 
+  {
+    "bytes": 2161, 
+    "file": "latex/documents/all_instruction_glyphs.tex", 
+    "name": "all_instruction_glyphs", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1071, 
+    "file": "latex/documents/caret_in_description.tex", 
+    "name": "caret_in_description", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1076, 
+    "file": "latex/documents/tilde_in_description.tex", 
+    "name": "tilde_in_description", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1081, 
+    "file": "latex/documents/unescaped_specials_survey.tex", 
+    "name": "unescaped_specials_survey", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1198, 
+    "file": "latex/documents/all_row_colours.tex", 
+    "name": "all_row_colours", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1022, 
+    "file": "latex/documents/empty_route.tex", 
+    "name": "empty_route", 
+    "ok": true
+  }, 
+  {
+    "bytes": 9089, 
+    "file": "latex/documents/multipage.tex", 
+    "name": "multipage", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1249, 
+    "file": "latex/documents/notes_heavy.tex", 
+    "name": "notes_heavy", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1128, 
+    "file": "latex/documents/unicode_latin.tex", 
+    "name": "unicode_latin", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1212, 
+    "file": "latex/documents/unicode_greek_name.tex", 
+    "name": "unicode_greek_name", 
+    "ok": true
+  }, 
+  {
+    "bytes": 1111, 
+    "file": "latex/documents/unicode_cjk.tex", 
+    "name": "unicode_cjk", 
+    "ok": true
+  }
+]

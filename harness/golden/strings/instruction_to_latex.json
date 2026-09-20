@@ -1,0 +1,257 @@
+[
+  {
+    "name": "iL_mnone", 
+    "ok": true, 
+    "result": "\\textbf{L}"
+  }, 
+  {
+    "name": "iL_mB", 
+    "ok": true, 
+    "result": "\\textbf{BL}"
+  }, 
+  {
+    "name": "iL_mQ", 
+    "ok": true, 
+    "result": "\\textbf{QL}"
+  }, 
+  {
+    "name": "iR_mnone", 
+    "ok": true, 
+    "result": "\\textbf{R}"
+  }, 
+  {
+    "name": "iR_mB", 
+    "ok": true, 
+    "result": "\\textbf{BR}"
+  }, 
+  {
+    "name": "iR_mQ", 
+    "ok": true, 
+    "result": "\\textbf{QR}"
+  }, 
+  {
+    "name": "iS_mnone", 
+    "ok": true, 
+    "result": "\\textbf{S}"
+  }, 
+  {
+    "name": "iS_mB", 
+    "ok": true, 
+    "result": "\\textbf{BS}"
+  }, 
+  {
+    "name": "iS_mQ", 
+    "ok": true, 
+    "result": "\\textbf{QS}"
+  }, 
+  {
+    "name": "iPIT_mnone", 
+    "ok": true, 
+    "result": "\\textbf{PIT}"
+  }, 
+  {
+    "name": "iPIT_mB", 
+    "ok": true, 
+    "result": "\\textbf{BPIT}"
+  }, 
+  {
+    "name": "iPIT_mQ", 
+    "ok": true, 
+    "result": "\\textbf{QPIT}"
+  }, 
+  {
+    "name": "i!_mnone", 
+    "ok": true, 
+    "result": "\\Large \\danger "
+  }, 
+  {
+    "name": "i!_mB", 
+    "ok": true, 
+    "result": "\\Large \\danger "
+  }, 
+  {
+    "name": "i!_mQ", 
+    "ok": true, 
+    "result": "\\Large \\danger "
+  }, 
+  {
+    "name": "iX_mnone", 
+    "ok": true, 
+    "result": "\\textbf{X}"
+  }, 
+  {
+    "name": "iX_mB", 
+    "ok": true, 
+    "result": "\\textbf{BX}"
+  }, 
+  {
+    "name": "iX_mQ", 
+    "ok": true, 
+    "result": "\\textbf{QX}"
+  }, 
+  {
+    "name": "iCHC_mnone", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{HC}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iCHC_mB", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{HC}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iCHC_mQ", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{HC}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC1_mnone", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{1}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC1_mB", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{1}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC1_mQ", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{1}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC2_mnone", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{2}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC2_mB", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{2}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC2_mQ", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{2}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC3_mnone", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{3}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC3_mB", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{3}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC3_mQ", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{3}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC4_mnone", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{4}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC4_mB", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{4}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC4_mQ", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{4}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC5_mnone", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{5}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC5_mB", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{5}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "iC5_mQ", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{5}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "i^_mnone", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{End}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "i^_mB", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{End}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "i^_mQ", 
+    "ok": true, 
+    "result": "$\\underset{\\textbf{End}}{\\text{\\large \\Mountain}}$"
+  }, 
+  {
+    "name": "i+_mnone", 
+    "ok": true, 
+    "result": "\\raisebox{-0.15em}{\\Plus} "
+  }, 
+  {
+    "name": "i+_mB", 
+    "ok": true, 
+    "result": "\\raisebox{-0.15em}{\\Plus} "
+  }, 
+  {
+    "name": "i+_mQ", 
+    "ok": true, 
+    "result": "\\raisebox{-0.15em}{\\Plus} "
+  }, 
+  {
+    "name": "inone_mnone", 
+    "ok": true, 
+    "result": "\\textbf{}"
+  }, 
+  {
+    "name": "inone_mB", 
+    "ok": true, 
+    "result": "\\textbf{B}"
+  }, 
+  {
+    "name": "inone_mQ", 
+    "ok": true, 
+    "result": "\\textbf{Q}"
+  }, 
+  {
+    "name": "custom_plain", 
+    "ok": true, 
+    "result": "\\textbf{U}"
+  }, 
+  {
+    "name": "custom_needs_escape", 
+    "ok": true, 
+    "result": "\\textbf{R\\&D}"
+  }, 
+  {
+    "name": "custom_backslash", 
+    "ok": true, 
+    "result": "\\textbf{\\textbackslash danger}"
+  }, 
+  {
+    "name": "custom_percent", 
+    "ok": true, 
+    "result": "\\textbf{50\\%}"
+  }, 
+  {
+    "name": "real_uturn", 
+    "ok": true, 
+    "result": "\\textbf{Uturn}"
+  }, 
+  {
+    "name": "real_lowercase_right", 
+    "ok": true, 
+    "result": "\\textbf{right}"
+  }
+]

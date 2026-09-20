@@ -1,0 +1,187 @@
+[
+  {
+    "name": "legacy_basic_emph", 
+    "ok": true, 
+    "result": "\\emph{foo}"
+  }, 
+  {
+    "name": "legacy_basic_strong", 
+    "ok": true, 
+    "result": "\\textbf{foo}"
+  }, 
+  {
+    "name": "legacy_strong_internal", 
+    "ok": true, 
+    "result": "foo\\textbf{bar}baz"
+  }, 
+  {
+    "name": "legacy_emph_internal", 
+    "ok": true, 
+    "result": "foo\\emph{bar}baz"
+  }, 
+  {
+    "name": "legacy_emph_noclose", 
+    "ok": true, 
+    "result": "*foobar"
+  }, 
+  {
+    "name": "legacy_strong_noclose", 
+    "ok": true, 
+    "result": "**foobar"
+  }, 
+  {
+    "name": "legacy_emph_unbalanced", 
+    "ok": true, 
+    "result": "*\\emph{foobar}"
+  }, 
+  {
+    "name": "legacy_emph_unbalanced2", 
+    "ok": true, 
+    "result": "\\emph{foobar}*"
+  }, 
+  {
+    "name": "legacy_emph_strong_together", 
+    "ok": true, 
+    "result": "\\emph{\\textbf{foobar}}"
+  }, 
+  {
+    "name": "legacy_star_with_escape", 
+    "ok": true, 
+    "result": "\\textbf{foo * bar * baz}"
+  }, 
+  {
+    "name": "legacy_star_with_space", 
+    "ok": true, 
+    "result": "\\textbf{foo * bar * baz}"
+  }, 
+  {
+    "name": "legacy_strong_in_emph", 
+    "ok": true, 
+    "result": "\\emph{\\textbf{strong} in emph}"
+  }, 
+  {
+    "name": "legacy_emph_in_strong", 
+    "ok": true, 
+    "result": "\\textbf{\\emph{emph} in strong}"
+  }, 
+  {
+    "name": "legacy_emph_in_strong_internal", 
+    "ok": true, 
+    "result": "\\textbf{foo \\emph{bar} baz}"
+  }, 
+  {
+    "name": "legacy_strong_in_emph_internal", 
+    "ok": true, 
+    "result": "\\emph{foo \\textbf{bar} baz}"
+  }, 
+  {
+    "name": "legacy_in_emph_strong", 
+    "ok": true, 
+    "result": "\\emph{in emph \\textbf{strong}}"
+  }, 
+  {
+    "name": "legacy_in_strong_emph", 
+    "ok": true, 
+    "result": "\\textbf{in strong \\emph{emph}}"
+  }, 
+  {
+    "name": "legacy_odd_nestings", 
+    "ok": true, 
+    "result": "\\emph{bar \\emph{baz}}"
+  }, 
+  {
+    "name": "legacy_odd_nestings2", 
+    "ok": true, 
+    "result": "\\emph{\\emph{bar} baz}"
+  }, 
+  {
+    "name": "legacy_pathological_nesting", 
+    "ok": true, 
+    "result": "\\textbf{foo}bar\\textbf{baz}"
+  }, 
+  {
+    "name": "legacy_delimiter_closing", 
+    "ok": true, 
+    "result": "\\emph{foo\\textbf{bar}}"
+  }, 
+  {
+    "name": "legacy_mismatches1", 
+    "ok": true, 
+    "result": "\\emph{bar}**"
+  }, 
+  {
+    "name": "legacy_mismatches2", 
+    "ok": true, 
+    "result": "**\\emph{foo}"
+  }, 
+  {
+    "name": "legacy_mismatches3", 
+    "ok": true, 
+    "result": "*\\textbf{bar}"
+  }, 
+  {
+    "name": "legacy_mismatches4", 
+    "ok": true, 
+    "result": "\\textbf{bar}*"
+  }, 
+  {
+    "name": "legacy_mismatches5", 
+    "ok": true, 
+    "result": "***foo \\emph{bar}"
+  }, 
+  {
+    "name": "empty", 
+    "ok": true, 
+    "result": ""
+  }, 
+  {
+    "name": "no_markup", 
+    "ok": true, 
+    "result": "Main St"
+  }, 
+  {
+    "name": "single_star", 
+    "ok": true, 
+    "result": "*"
+  }, 
+  {
+    "name": "double_star", 
+    "ok": true, 
+    "result": "**"
+  }, 
+  {
+    "name": "triple_star", 
+    "ok": true, 
+    "result": "***"
+  }, 
+  {
+    "name": "star_space_only", 
+    "ok": true, 
+    "result": "a * b"
+  }, 
+  {
+    "name": "doublestar_space_only", 
+    "ok": true, 
+    "result": "a ** b"
+  }, 
+  {
+    "name": "escaped_underscore", 
+    "ok": true, 
+    "result": "foo_bar"
+  }, 
+  {
+    "name": "after_escape_backslash", 
+    "ok": true, 
+    "result": "\\textbackslash foo \\emph{bar}"
+  }, 
+  {
+    "name": "after_escape_underscore", 
+    "ok": true, 
+    "result": "a\\textunderscore b \\textbf{c}"
+  }, 
+  {
+    "name": "emph_with_escaped_specials", 
+    "ok": true, 
+    "result": "\\textbf{\\$5 toll}"
+  }
+]

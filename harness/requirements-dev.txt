@@ -1,0 +1,7 @@
+# Python 3 dependencies for running the parity harness.
+#
+# Deliberately tiny: the harness must not depend on the rewrite's stack, or it
+# would stop being an independent check on it. Everything the legacy code needs
+# lives in the oracle container instead (harness/oracle/requirements.txt).
+pytest>=8.0
+pypdf>=4.0

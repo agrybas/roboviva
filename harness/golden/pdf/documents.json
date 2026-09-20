@@ -1,0 +1,322 @@
+[
+  {
+    "name": "minimal", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 1, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "Route #1 (1.0 mi) Go At On For L 0.0 Foo Page 1 of 1", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "name": "named_route", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 1, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "Test Route (1.0 mi / 1000 ft) Route #42 Go At On For 0.0 Start of route 1.0 R 1.0 Foo St. Page 1 of 1", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "name": "no_elevation", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 1, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "No Climb (12.3 mi) Route #42 Go At On For 0.0 Start of route 1.0 R 1.0 Foo St. Page 1 of 1", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "name": "zero_elevation", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 1, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "Flat (12.3 mi) Route #42 Go At On For 0.0 Start of route 1.0 R 1.0 Foo St. Page 1 of 1", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "name": "elevation_truncated", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 1, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "Climby (12.3 mi / 999 ft) Route #42 Go At On For 0.0 Start of route 1.0 R 1.0 Foo St. Page 1 of 1", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "name": "name_with_latex_specials", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 1, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "\\terrible &oute Name \\\\%%% (1.0 mi / 123 ft) Route #42 Go At On For 0.0 Start of route 1.0 R 1.0 Foo St. Page 1 of 1", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "name": "name_with_emphasis", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 1, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "A **bold** title (1.0 mi / 100 ft) Route #42 Go At On For 0.0 Start of route 1.0 R 1.0 Foo St. Page 1 of 1", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "error": {
+      "message": "%d format: a number is required, not unicode", 
+      "type": "TypeError"
+    }, 
+    "name": "string_route_id", 
+    "ok": false, 
+    "stage": "make_latex"
+  }, 
+  {
+    "name": "all_instruction_glyphs", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 1, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "Glyph Sampler (15.0 mi / 500 ft) Route #7 Go At On For L 0.0 Point number 0 1.0 R 1.0 Point number 1 1.0 S 2.0 Point number 2 1.0 PIT 3.0 Point number 3 1.0 \" 4.0 Point number 4 1.0 X 5.0 Point number 5 1.0 \u0015 HC6.0 Point number 6 1.0 \u0015 17.0 Point number 7 1.0 \u0015 28.0 Point number 8 1.0 \u0015 39.0 Point number 9 1.0 \u0015 410.0 Point number 10 1.0 \u0015 511.0 Point number 11 1.0 \u0015 End12.0 Point number 12 1.0 ' 13.0 Point number 13 1.0 14.0 Point number 14 1.0 Page 1 of 1", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "name": "caret_in_description", 
+    "ok": true, 
+    "result": {
+      "error_excerpt": [
+        "! Missing $ inserted.", 
+        "!  ==> Fatal error occurred, no output PDF file produced!"
+      ], 
+      "error_type": "ValueError", 
+      "rendered": false
+    }
+  }, 
+  {
+    "name": "tilde_in_description", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 1, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "Tilde (1.0 mi) Route #16 Go At On For R 0.0 Point here 1.0 Page 1 of 1", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "name": "unescaped_specials_survey", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 1, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "Unescaped (1.0 mi) Route #17 Go At On For R 0.0 A [b] \"c\" ‘d‘ 1.0 Page 1 of 1", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "name": "all_row_colours", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 1, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "Colours (3.0 mi) Route #8 Go At On For R 0.0 Gray 1.0 \" 1.0 Y ellow 1.0 L 2.0 None Page 1 of 1", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "name": "empty_route", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 1, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "Empty (0.0 mi) Route #9 Go At On For Page 1 of 1", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "name": "multipage", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 2, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "Long Route (60.0 mi / 5000 ft) Route #10 Go At On For L 0.0 Street number 0 0.5 R 0.5 Street number 1 0.5 L 1.0 Street number 2 0.5 R 1.5 Street number 3 0.5 L 2.0 Street number 4 0.5 R 2.5 Street number 5 0.5 L 3.0 Street number 6 0.5 R 3.5 Street number 7 0.5 L 4.0 Street number 8 0.5 R 4.5 Street number 9 0.5 L 5.0 Street number 10 0.5 R 5.5 Street number 11 0.5 L 6.0 Street number 12 0.5 R 6.5 Street number 13 0.5 L 7.0 Street number 14 0.5 R 7.5 Street number 15 0.5 L 8.0 Street number 16 0.5 R 8.5 Street number 17 0.5 L 9.0 Street number 18 0.5 R 9.5 Street number 19 0.5 L 10.0 Street number 20 0.5 R 10.5 Street number 21 0.5 L 11.0 Street number 22 0.5 R 11.5 Street number 23 0.5 L 12.0 Street number 24 0.5 R 12.5 Street number 25 0.5 L 13.0 Street number 26 0.5 R 13.5 Street number 27 0.5 L 14.0 Street number 28 0.5 R 14.5 Street number 29 0.5 L 15.0 Street number 30 0.5 R 15.5 Street number 31 0.5 L 16.0 Street number 32 0.5 R 16.5 Street number 33 0.5 L 17.0 Street number 34 0.5 R 17.5 Street number 35 0.5 L 18.0 Street number 36 0.5 R 18.5 Street number 37 0.5 L 19.0 Street number 38 0.5 R 19.5 Street number 39 0.5 L 20.0 Street number 40 0.5 R 20.5 Street number 41 0.5 L 21.0 Street number 42 0.5 R 21.5 Street number 43 0.5Go At On For L 22.0 Street number 44 0.5 R 22.5 Street number 45 0.5 L 23.0 Street number 46 0.5 R 23.5 Street number 47 0.5 L 24.0 Street number 48 0.5 R 24.5 Street number 49 0.5 L 25.0 Street number 50 0.5 R 25.5 Street number 51 0.5 L 26.0 Street number 52 0.5 R 26.5 Street number 53 0.5 L 27.0 Street number 54 0.5 R 27.5 Street number 55 0.5 L 28.0 Street number 56 0.5 R 28.5 Street number 57 0.5 L 29.0 Street number 58 0.5 R 29.5 Street number 59 0.5 L 30.0 Street number 60 0.5 R 30.5 Street number 61 0.5 L 31.0 Street number 62 0.5 R 31.5 Street number 63 0.5 L 32.0 Street number 64 0.5 R 32.5 Street number 65 0.5 L 33.0 Street number 66 0.5 R 33.5 Street number 67 0.5 L 34.0 Street number 68 0.5 R 34.5 Street number 69 0.5 L 35.0 Street number 70 0.5 R 35.5 Street number 71 0.5 L 36.0 Street number 72 0.5 R 36.5 Street number 73 0.5 L 37.0 Street number 74 0.5 R 37.5 Street number 75 0.5 L 38.0 Street number 76 0.5 R 38.5 Street number 77 0.5 L 39.0 Street number 78 0.5 R 39.5 Street number 79 0.5 L 40.0 Street number 80 0.5 R 40.5 Street number 81 0.5 L 41.0 Street number 82 0.5 R 41.5 Street number 83 0.5 L 42.0 Street number 84 0.5 R 42.5 Street number 85 0.5 L 43.0 Street number 86 0.5 R 43.5 Street number 87 0.5 Page 1 of 2", 
+          "width_pt": 612
+        }, 
+        {
+          "height_pt": 792, 
+          "text": "Long Route (60.0 mi / 5000 ft) Route #10 Go At On For L 44.0 Street number 88 0.5 R 44.5 Street number 89 0.5 L 45.0 Street number 90 0.5 R 45.5 Street number 91 0.5 L 46.0 Street number 92 0.5 R 46.5 Street number 93 0.5 L 47.0 Street number 94 0.5 R 47.5 Street number 95 0.5 L 48.0 Street number 96 0.5 R 48.5 Street number 97 0.5 L 49.0 Street number 98 0.5 R 49.5 Street number 99 0.5 L 50.0 Street number 100 0.5 R 50.5 Street number 101 0.5 L 51.0 Street number 102 0.5 R 51.5 Street number 103 0.5 L 52.0 Street number 104 0.5 R 52.5 Street number 105 0.5 L 53.0 Street number 106 0.5 R 53.5 Street number 107 0.5 L 54.0 Street number 108 0.5 R 54.5 Street number 109 0.5 L 55.0 Street number 110 0.5 R 55.5 Street number 111 0.5 L 56.0 Street number 112 0.5 R 56.5 Street number 113 0.5 L 57.0 Street number 114 0.5 R 57.5 Street number 115 0.5 L 58.0 Street number 116 0.5 R 58.5 Street number 117 0.5 L 59.0 Street number 118 0.5 R 59.5 Street number 119 0.5 Page 2 of 2", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "name": "notes_heavy", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 1, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "Notes (2.0 mi) Route #11 Go At On For R 0.0 Foo St. A rather long note that will cer- tainly need to wrap across several lines in the On column of the ren- dered sheet1.0 1.0 Note-only row Page 1 of 1", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "name": "unicode_latin", 
+    "ok": true, 
+    "result": {
+      "bytes_present": true, 
+      "header": "%PDF-", 
+      "page_count": 1, 
+      "pages": [
+        {
+          "height_pt": 792, 
+          "text": "Café Ride (2.0 mi) Route #12 Go At On For R 0.0 Rue de l’Église 1.0 L 1.0 Straße Page 1 of 1", 
+          "width_pt": 612
+        }
+      ], 
+      "rendered": true, 
+      "trailer": "%%EOF\n"
+    }
+  }, 
+  {
+    "name": "unicode_greek_name", 
+    "ok": true, 
+    "result": {
+      "error_excerpt": [
+        "! Package inputenc Error: Unicode character Φ (U+03A6)", 
+        "!  ==> Fatal error occurred, no output PDF file produced!"
+      ], 
+      "error_type": "ValueError", 
+      "rendered": false
+    }
+  }, 
+  {
+    "name": "unicode_cjk", 
+    "ok": true, 
+    "result": {
+      "error_excerpt": [
+        "! Package inputenc Error: Unicode character タ (U+30BF)", 
+        "!  ==> Fatal error occurred, no output PDF file produced!"
+      ], 
+      "error_type": "ValueError", 
+      "rendered": false
+    }
+  }
+]

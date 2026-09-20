@@ -1,0 +1,77 @@
+[
+  {
+    "name": "left",
+    "why": "Instruction.LEFT -> no colour.",
+    "instruction": "L"
+  },
+  {
+    "name": "right",
+    "why": "Instruction.RIGHT -> GRAY.",
+    "instruction": "R"
+  },
+  {
+    "name": "straight",
+    "why": "-> no colour.",
+    "instruction": "S"
+  },
+  {
+    "name": "pit",
+    "why": "Instruction.PIT -> YELLOW.",
+    "instruction": "PIT"
+  },
+  {
+    "name": "danger",
+    "why": "Instruction.DANGER -> YELLOW.",
+    "instruction": "!"
+  },
+  {
+    "name": "crosses",
+    "why": "Instruction.CROSSES; nothing ever produces it.",
+    "instruction": "X"
+  },
+  {
+    "name": "cat_hc",
+    "why": "-> no colour.",
+    "instruction": "CHC"
+  },
+  {
+    "name": "cat_1",
+    "why": "-> no colour.",
+    "instruction": "C1"
+  },
+  {
+    "name": "cat_5",
+    "why": "-> no colour; nothing ever produces CAT_5.",
+    "instruction": "C5"
+  },
+  {
+    "name": "summit",
+    "why": "-> no colour.",
+    "instruction": "^"
+  },
+  {
+    "name": "first_aid",
+    "why": "-> no colour.",
+    "instruction": "+"
+  },
+  {
+    "name": "none_empty_string",
+    "why": "THE BIG ONE. Instruction.NONE is the empty string, and cue.py:53 reads `instruction in (Instruction.RIGHT)` -- a missing comma makes that a SUBSTRING test against 'R', and '' is a substring of everything. So every Start/End/Generic/Control row comes out GRAY. Almost certainly a typo; frozen because the output depends on it.",
+    "instruction": ""
+  },
+  {
+    "name": "custom_r_substring",
+    "why": "'R' as a custom instruction is also a substring of 'R' -> GRAY.",
+    "instruction": "R"
+  },
+  {
+    "name": "custom_multi_char",
+    "why": "'QR' is NOT a substring of 'R' -> no colour.",
+    "instruction": "QR"
+  },
+  {
+    "name": "custom_uturn",
+    "why": "Unmapped real-world type -> no colour.",
+    "instruction": "Uturn"
+  }
+]

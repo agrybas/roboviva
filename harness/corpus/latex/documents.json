@@ -1,0 +1,1696 @@
+[
+  {
+    "name": "minimal",
+    "why": "One entry, no name, no elevation. The stats land in the RIGHT header because there is no title to attach them to (latex.py:195-199).",
+    "route": {
+      "entries": [
+        {
+          "instruction": "L",
+          "description": "Foo",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 1.0,
+      "id": 1,
+      "name": null,
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "named_route",
+    "why": "With a name, stats move to the LEFT header alongside the title.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "Gray"
+        },
+        {
+          "instruction": "R",
+          "description": "Foo St.",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "Gray"
+        }
+      ],
+      "length_mi": 1.0,
+      "id": 42,
+      "name": "Test Route",
+      "elevation_gain_ft": 1000.0
+    }
+  },
+  {
+    "name": "no_elevation",
+    "why": "elevation_gain_ft of None -> the header shows miles only.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "Gray"
+        },
+        {
+          "instruction": "R",
+          "description": "Foo St.",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "Gray"
+        }
+      ],
+      "length_mi": 12.3,
+      "id": 42,
+      "name": "No Climb",
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "zero_elevation",
+    "why": "0 is falsy, so a genuinely flat route also shows miles only -- a flat route and an unknown-climb route are indistinguishable.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "Gray"
+        },
+        {
+          "instruction": "R",
+          "description": "Foo St.",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "Gray"
+        }
+      ],
+      "length_mi": 12.3,
+      "id": 42,
+      "name": "Flat",
+      "elevation_gain_ft": 0.0
+    }
+  },
+  {
+    "name": "elevation_truncated",
+    "why": "Climb is '%d' so it truncates rather than rounds: 999.9ft -> 999.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "Gray"
+        },
+        {
+          "instruction": "R",
+          "description": "Foo St.",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "Gray"
+        }
+      ],
+      "length_mi": 12.3,
+      "id": 42,
+      "name": "Climby",
+      "elevation_gain_ft": 999.9
+    }
+  },
+  {
+    "name": "name_with_latex_specials",
+    "why": "Route names are user-controlled and reach \\lhead, so they are escaped (latex.py:196).",
+    "route": {
+      "entries": [
+        {
+          "instruction": "",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "Gray"
+        },
+        {
+          "instruction": "R",
+          "description": "Foo St.",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "Gray"
+        }
+      ],
+      "length_mi": 1.0,
+      "id": 42,
+      "name": "\\terrible &oute Name \\\\ %%%",
+      "elevation_gain_ft": 123.45
+    }
+  },
+  {
+    "name": "name_with_emphasis",
+    "why": "IMPORTANT: _makeHeader escapes the name but never calls _format, so '**bold**' in a route title stays literal asterisks -- emphasis works in cue rows but NOT in the header.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "Gray"
+        },
+        {
+          "instruction": "R",
+          "description": "Foo St.",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "Gray"
+        }
+      ],
+      "length_mi": 1.0,
+      "id": 42,
+      "name": "A **bold** title",
+      "elevation_gain_ft": 100.0
+    }
+  },
+  {
+    "name": "string_route_id",
+    "why": "_makeHeader does '%d' % route_id (latex.py:186), so a string id raises TypeError -- yet ridewithgps stores whatever it was given and the old tests assert route.id is a STRING. Recording the failure.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "Gray"
+        },
+        {
+          "instruction": "R",
+          "description": "Foo St.",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "Gray"
+        }
+      ],
+      "length_mi": 1.0,
+      "id": "6260667",
+      "name": "Str Id",
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "all_instruction_glyphs",
+    "why": "Every Instruction value in one document, so each glyph is exercised. Descriptions are deliberately plain: an earlier version used the instruction itself as the description text, which put a bare '^' in a cell and killed the render for reasons unrelated to the glyphs. See caret_in_description.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "L",
+          "description": "Point number 0",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Point number 1",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "S",
+          "description": "Point number 2",
+          "absolute_distance": 2.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "PIT",
+          "description": "Point number 3",
+          "absolute_distance": 3.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "!",
+          "description": "Point number 4",
+          "absolute_distance": 4.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "X",
+          "description": "Point number 5",
+          "absolute_distance": 5.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "CHC",
+          "description": "Point number 6",
+          "absolute_distance": 6.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "C1",
+          "description": "Point number 7",
+          "absolute_distance": 7.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "C2",
+          "description": "Point number 8",
+          "absolute_distance": 8.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "C3",
+          "description": "Point number 9",
+          "absolute_distance": 9.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "C4",
+          "description": "Point number 10",
+          "absolute_distance": 10.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "C5",
+          "description": "Point number 11",
+          "absolute_distance": 11.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "^",
+          "description": "Point number 12",
+          "absolute_distance": 12.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "+",
+          "description": "Point number 13",
+          "absolute_distance": 13.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "",
+          "description": "Point number 14",
+          "absolute_distance": 14.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        }
+      ],
+      "length_mi": 15.0,
+      "id": 7,
+      "name": "Glyph Sampler",
+      "elevation_gain_ft": 500.0
+    }
+  },
+  {
+    "name": "caret_in_description",
+    "why": "BUG: a bare '^' in a description is FATAL to the whole PDF. _escape (latex.py:48-63) covers # & $ _ | < > % { } and U+200B but NOT '^', which LaTeX reads as a superscript operator outside math mode -> 'Missing $ inserted' -> no output file at all. A rider who types '85^ cadence' or 'bear ^ the bridge' in RideWithGPS gets the 0xFF error page and no explanation. One cue poisons the entire sheet.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Point ^",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        }
+      ],
+      "length_mi": 1.0,
+      "id": 15,
+      "name": "Caret",
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "tilde_in_description",
+    "why": "'~' is also unescaped, but it is a non-breaking space in LaTeX rather than a syntax error, so this one renders -- silently wrong instead of loudly broken.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Point ~ here",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        }
+      ],
+      "length_mi": 1.0,
+      "id": 16,
+      "name": "Tilde",
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "unescaped_specials_survey",
+    "why": "The other characters _escape does not handle: [ ] \" and a backtick. None are fatal, but '`' becomes a left quote and '\"' becomes a double quote, so the rendered text differs from what was typed.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "A [b] \"c\" `d`",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        }
+      ],
+      "length_mi": 1.0,
+      "id": 17,
+      "name": "Unescaped",
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "all_row_colours",
+    "why": "One row of each colour, to pin the \\rowcolor arguments in context.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Gray",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "Gray"
+        },
+        {
+          "instruction": "!",
+          "description": "Yellow",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "Yellow"
+        },
+        {
+          "instruction": "L",
+          "description": "None",
+          "absolute_distance": 2.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 3.0,
+      "id": 8,
+      "name": "Colours",
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "empty_route",
+    "why": "No entries at all: a valid document with an empty table. Reachable only via the CSV path, since the JSON path always synthesizes sentinels.",
+    "route": {
+      "entries": [],
+      "length_mi": 0.0,
+      "id": 9,
+      "name": "Empty",
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "multipage",
+    "why": "120 rows, enough to spill past one page and exercise \\pageref{LastPage} and the two-column supertabular flow.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "L",
+          "description": "Street number 0",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 1",
+          "absolute_distance": 0.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 2",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 3",
+          "absolute_distance": 1.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 4",
+          "absolute_distance": 2.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 5",
+          "absolute_distance": 2.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 6",
+          "absolute_distance": 3.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 7",
+          "absolute_distance": 3.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 8",
+          "absolute_distance": 4.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 9",
+          "absolute_distance": 4.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 10",
+          "absolute_distance": 5.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 11",
+          "absolute_distance": 5.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 12",
+          "absolute_distance": 6.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 13",
+          "absolute_distance": 6.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 14",
+          "absolute_distance": 7.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 15",
+          "absolute_distance": 7.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 16",
+          "absolute_distance": 8.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 17",
+          "absolute_distance": 8.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 18",
+          "absolute_distance": 9.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 19",
+          "absolute_distance": 9.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 20",
+          "absolute_distance": 10.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 21",
+          "absolute_distance": 10.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 22",
+          "absolute_distance": 11.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 23",
+          "absolute_distance": 11.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 24",
+          "absolute_distance": 12.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 25",
+          "absolute_distance": 12.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 26",
+          "absolute_distance": 13.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 27",
+          "absolute_distance": 13.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 28",
+          "absolute_distance": 14.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 29",
+          "absolute_distance": 14.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 30",
+          "absolute_distance": 15.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 31",
+          "absolute_distance": 15.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 32",
+          "absolute_distance": 16.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 33",
+          "absolute_distance": 16.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 34",
+          "absolute_distance": 17.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 35",
+          "absolute_distance": 17.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 36",
+          "absolute_distance": 18.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 37",
+          "absolute_distance": 18.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 38",
+          "absolute_distance": 19.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 39",
+          "absolute_distance": 19.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 40",
+          "absolute_distance": 20.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 41",
+          "absolute_distance": 20.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 42",
+          "absolute_distance": 21.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 43",
+          "absolute_distance": 21.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 44",
+          "absolute_distance": 22.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 45",
+          "absolute_distance": 22.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 46",
+          "absolute_distance": 23.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 47",
+          "absolute_distance": 23.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 48",
+          "absolute_distance": 24.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 49",
+          "absolute_distance": 24.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 50",
+          "absolute_distance": 25.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 51",
+          "absolute_distance": 25.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 52",
+          "absolute_distance": 26.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 53",
+          "absolute_distance": 26.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 54",
+          "absolute_distance": 27.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 55",
+          "absolute_distance": 27.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 56",
+          "absolute_distance": 28.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 57",
+          "absolute_distance": 28.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 58",
+          "absolute_distance": 29.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 59",
+          "absolute_distance": 29.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 60",
+          "absolute_distance": 30.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 61",
+          "absolute_distance": 30.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 62",
+          "absolute_distance": 31.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 63",
+          "absolute_distance": 31.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 64",
+          "absolute_distance": 32.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 65",
+          "absolute_distance": 32.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 66",
+          "absolute_distance": 33.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 67",
+          "absolute_distance": 33.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 68",
+          "absolute_distance": 34.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 69",
+          "absolute_distance": 34.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 70",
+          "absolute_distance": 35.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 71",
+          "absolute_distance": 35.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 72",
+          "absolute_distance": 36.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 73",
+          "absolute_distance": 36.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 74",
+          "absolute_distance": 37.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 75",
+          "absolute_distance": 37.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 76",
+          "absolute_distance": 38.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 77",
+          "absolute_distance": 38.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 78",
+          "absolute_distance": 39.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 79",
+          "absolute_distance": 39.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 80",
+          "absolute_distance": 40.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 81",
+          "absolute_distance": 40.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 82",
+          "absolute_distance": 41.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 83",
+          "absolute_distance": 41.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 84",
+          "absolute_distance": 42.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 85",
+          "absolute_distance": 42.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 86",
+          "absolute_distance": 43.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 87",
+          "absolute_distance": 43.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 88",
+          "absolute_distance": 44.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 89",
+          "absolute_distance": 44.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 90",
+          "absolute_distance": 45.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 91",
+          "absolute_distance": 45.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 92",
+          "absolute_distance": 46.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 93",
+          "absolute_distance": 46.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 94",
+          "absolute_distance": 47.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 95",
+          "absolute_distance": 47.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 96",
+          "absolute_distance": 48.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 97",
+          "absolute_distance": 48.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 98",
+          "absolute_distance": 49.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 99",
+          "absolute_distance": 49.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 100",
+          "absolute_distance": 50.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 101",
+          "absolute_distance": 50.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 102",
+          "absolute_distance": 51.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 103",
+          "absolute_distance": 51.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 104",
+          "absolute_distance": 52.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 105",
+          "absolute_distance": 52.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 106",
+          "absolute_distance": 53.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 107",
+          "absolute_distance": 53.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 108",
+          "absolute_distance": 54.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 109",
+          "absolute_distance": 54.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 110",
+          "absolute_distance": 55.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 111",
+          "absolute_distance": 55.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 112",
+          "absolute_distance": 56.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 113",
+          "absolute_distance": 56.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 114",
+          "absolute_distance": 57.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 115",
+          "absolute_distance": 57.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 116",
+          "absolute_distance": 58.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 117",
+          "absolute_distance": 58.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        },
+        {
+          "instruction": "L",
+          "description": "Street number 118",
+          "absolute_distance": 59.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Street number 119",
+          "absolute_distance": 59.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "Gray"
+        }
+      ],
+      "length_mi": 60.0,
+      "id": 10,
+      "name": "Long Route",
+      "elevation_gain_ft": 5000.0
+    }
+  },
+  {
+    "name": "notes_heavy",
+    "why": "Long notes wrapping inside a 2.25in column.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Foo St.",
+          "absolute_distance": 0.0,
+          "note": "A rather long note that will certainly need to wrap across several lines in the On column of the rendered sheet",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "",
+          "description": "",
+          "absolute_distance": 1.0,
+          "note": "Note-only row",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 2.0,
+      "id": 11,
+      "name": "Notes",
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "unicode_latin",
+    "why": "Accented Latin renders fine with Helvetica.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Rue de l'Église",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "L",
+          "description": "Straße",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 2.0,
+      "id": 12,
+      "name": "Café Ride",
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "unicode_greek_name",
+    "why": "Greek in the route name. pdflatex with Helvetica has no glyphs for this; whether it warns or hard-fails is recorded, not assumed.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "Gray"
+        },
+        {
+          "instruction": "R",
+          "description": "Foo St.",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "Gray"
+        }
+      ],
+      "length_mi": 1.0,
+      "id": 13,
+      "name": "Mini Brevet-Φθινοπωρινός Χολωμόντας",
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "unicode_cjk",
+    "why": "Japanese in both name and body -- same font-stack question.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Uターンして",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        }
+      ],
+      "length_mi": 1.0,
+      "id": 14,
+      "name": "ポケモンマンホール巡り200",
+      "elevation_gain_ft": null
+    }
+  }
+]

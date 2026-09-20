@@ -1,0 +1,308 @@
+[
+  {
+    "name": "iL_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "L",
+    "modifier": ""
+  },
+  {
+    "name": "iL_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "L",
+    "modifier": "B"
+  },
+  {
+    "name": "iL_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "L",
+    "modifier": "Q"
+  },
+  {
+    "name": "iR_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "R",
+    "modifier": ""
+  },
+  {
+    "name": "iR_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "R",
+    "modifier": "B"
+  },
+  {
+    "name": "iR_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "R",
+    "modifier": "Q"
+  },
+  {
+    "name": "iS_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "S",
+    "modifier": ""
+  },
+  {
+    "name": "iS_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "S",
+    "modifier": "B"
+  },
+  {
+    "name": "iS_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "S",
+    "modifier": "Q"
+  },
+  {
+    "name": "iPIT_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "PIT",
+    "modifier": ""
+  },
+  {
+    "name": "iPIT_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "PIT",
+    "modifier": "B"
+  },
+  {
+    "name": "iPIT_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "PIT",
+    "modifier": "Q"
+  },
+  {
+    "name": "i!_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "!",
+    "modifier": ""
+  },
+  {
+    "name": "i!_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "!",
+    "modifier": "B"
+  },
+  {
+    "name": "i!_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "!",
+    "modifier": "Q"
+  },
+  {
+    "name": "iX_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "X",
+    "modifier": ""
+  },
+  {
+    "name": "iX_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "X",
+    "modifier": "B"
+  },
+  {
+    "name": "iX_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "X",
+    "modifier": "Q"
+  },
+  {
+    "name": "iCHC_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "CHC",
+    "modifier": ""
+  },
+  {
+    "name": "iCHC_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "CHC",
+    "modifier": "B"
+  },
+  {
+    "name": "iCHC_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "CHC",
+    "modifier": "Q"
+  },
+  {
+    "name": "iC1_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C1",
+    "modifier": ""
+  },
+  {
+    "name": "iC1_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C1",
+    "modifier": "B"
+  },
+  {
+    "name": "iC1_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C1",
+    "modifier": "Q"
+  },
+  {
+    "name": "iC2_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C2",
+    "modifier": ""
+  },
+  {
+    "name": "iC2_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C2",
+    "modifier": "B"
+  },
+  {
+    "name": "iC2_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C2",
+    "modifier": "Q"
+  },
+  {
+    "name": "iC3_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C3",
+    "modifier": ""
+  },
+  {
+    "name": "iC3_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C3",
+    "modifier": "B"
+  },
+  {
+    "name": "iC3_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C3",
+    "modifier": "Q"
+  },
+  {
+    "name": "iC4_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C4",
+    "modifier": ""
+  },
+  {
+    "name": "iC4_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C4",
+    "modifier": "B"
+  },
+  {
+    "name": "iC4_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C4",
+    "modifier": "Q"
+  },
+  {
+    "name": "iC5_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C5",
+    "modifier": ""
+  },
+  {
+    "name": "iC5_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C5",
+    "modifier": "B"
+  },
+  {
+    "name": "iC5_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "C5",
+    "modifier": "Q"
+  },
+  {
+    "name": "i^_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "^",
+    "modifier": ""
+  },
+  {
+    "name": "i^_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "^",
+    "modifier": "B"
+  },
+  {
+    "name": "i^_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "^",
+    "modifier": "Q"
+  },
+  {
+    "name": "i+_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "+",
+    "modifier": ""
+  },
+  {
+    "name": "i+_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "+",
+    "modifier": "B"
+  },
+  {
+    "name": "i+_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "+",
+    "modifier": "Q"
+  },
+  {
+    "name": "inone_mnone",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "",
+    "modifier": ""
+  },
+  {
+    "name": "inone_mB",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "",
+    "modifier": "B"
+  },
+  {
+    "name": "inone_mQ",
+    "why": "Every Instruction x Modifier combination.",
+    "instruction": "",
+    "modifier": "Q"
+  },
+  {
+    "name": "custom_plain",
+    "why": "Custom instructions render bold via the else branch.",
+    "instruction": "U",
+    "modifier": ""
+  },
+  {
+    "name": "custom_needs_escape",
+    "why": "A custom instruction containing LaTeX specials must be escaped (latex.py:46) -- users control this string via the [tag].",
+    "instruction": "R&D",
+    "modifier": ""
+  },
+  {
+    "name": "custom_backslash",
+    "why": "Injection attempt through the [tag].",
+    "instruction": "\\danger",
+    "modifier": ""
+  },
+  {
+    "name": "custom_percent",
+    "why": "'%' would comment out the rest of the row.",
+    "instruction": "50%",
+    "modifier": ""
+  },
+  {
+    "name": "real_uturn",
+    "why": "How an unmapped RWGPS type actually renders.",
+    "instruction": "Uturn",
+    "modifier": ""
+  },
+  {
+    "name": "real_lowercase_right",
+    "why": "Route 56819245's lowercase passthrough.",
+    "instruction": "right",
+    "modifier": ""
+  }
+]

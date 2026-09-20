@@ -1,0 +1,27 @@
+{
+  "provenance": {
+    "note": "route.track_points removed; the legacy parser never reads it (ridewithgps.py:122-171). Everything else is verbatim, re-serialized with sorted keys.",
+    "original_body_bytes": 4599,
+    "original_body_sha256": "fc44306656a74e6433b640a871a7113628e1c26094dd8a689301ea06f5d75006",
+    "recorded_from": "live ridewithgps.com",
+    "track_points_dropped": 23
+  },
+  "request_url": "http://ridewithgps.com/routes/5334050.json?api_key=None&version=2",
+  "response": {
+    "body": "{\"route\": {\"activity_types\": [], \"administrative_area\": \"NY\", \"bounding_box\": [{\"lat\": 40.69479, \"lng\": -73.99588}, {\"lat\": 40.69854, \"lng\": -73.99272}], \"country_code\": \"US\", \"course_points\": [{\"_e\": 1, \"d\": 168.1, \"description\": \"\\\\[ \\\\sum{\\\\vec{F}}= m\\\\dot{v} \\\\]\", \"i\": 2, \"n\": \"Turn right onto Pineapple St\", \"t\": \"Right\", \"x\": -73.994289, \"y\": 40.69854}, {\"_e\": 1, \"d\": 309.4, \"description\": \"\\\\[ \\\\int_{0}^{\\\\frac{\\\\pi} {2}}\\\\left(\\\\frac{x}{\\\\sin x}\\\\right)^2dx \\\\]\", \"i\": 4, \"n\": \"Turn right onto Henry St Hill #3\", \"t\": \"Right\", \"x\": -73.99272, \"y\": 40.698099}, {\"_e\": 1, \"d\": 487.2, \"i\": 7, \"n\": \"\\\\[ \\\\Delta V = v_e \\\\ln \\\\frac{m_0}{m_1} \\\\]\", \"t\": \"Food\", \"x\": -73.993437, \"y\": 40.696598}, {\"d\": 701.3, \"i\": 12, \"n\": \"Turn right onto Montague St\", \"t\": \"Right\", \"x\": -73.9943, \"y\": 40.69479}, {\"d\": 841.4, \"i\": 14, \"n\": \"Turn right onto Hicks St\", \"t\": \"Right\", \"x\": -73.995859, \"y\": 40.69522}, {\"d\": 1157.1, \"i\": 18, \"n\": \"Turn left onto Clark St\", \"t\": \"Left\", \"x\": -73.9946, \"y\": 40.69789}, {\"d\": 1234.0, \"i\": 20, \"n\": \"Turn left onto Willow St\", \"t\": \"Left\", \"x\": -73.99546, \"y\": 40.69812}], \"created_at\": \"2014-07-15T14:23:15-07:00\", \"description\": \"\", \"difficulty\": \"casual\", \"distance\": 1337.2, \"elevation_gain\": 6.72374, \"elevation_loss\": 6.84396, \"first_lat\": 40.69712, \"first_lng\": -73.99497, \"has_course_points\": true, \"highlighted_photo_checksum\": null, \"highlighted_photo_id\": 0, \"id\": 5334050, \"last_lat\": 40.69725, \"last_lng\": -73.99588, \"locality\": \"NYC\", \"metrics\": {\"distance\": 1337.12656359757, \"ele\": {\"_avg\": 24.269565217391307, \"_max\": 26.6, \"_min\": 21.5, \"avg\": 24.269565217391307, \"max\": 26.6, \"max_i\": 8, \"min\": 21.5, \"min_i\": 2}, \"ele_gain\": 6.723807267515102, \"ele_loss\": 6.844049848223676, \"endElevation\": 24.6, \"grade\": {\"_avg\": -0.008695652173913037, \"_max\": 1.7, \"_min\": -1.9, \"avg\": -0.009090909090909084, \"max\": 0.8585062301565198, \"max_i\": 7, \"min\": -1.4851673489044064, \"min_i\": 2}, \"hills\": [], \"numPoints\": 23, \"routeSummary\": {\"-1\": 218.2, \"-10\": 0, \"-11\": 0, \"-12\": 0, \"-13\": 0, \"-14\": 0, \"-15\": 0, \"-2\": 0, \"-3\": 0, \"-4\": 0, \"-5\": 0, \"-6\": 0, \"-7\": 0, \"-8\": 0, \"-9\": 0, \"0\": 793.0999999999999, \"1\": 234.60000000000002, \"10\": 0, \"11\": 0, \"12\": 0, \"13\": 0, \"14\": 0, \"15\": 0, \"2\": 0, \"3\": 0, \"4\": 0, \"5\": 0, \"6\": 0, \"7\": 0, \"8\": 0, \"9\": 0}, \"startElevation\": 25, \"v\": 1}, \"name\": \"Around the block... with calculus!\", \"nav_enabled\": false, \"pavement_type\": null, \"pavement_type_id\": null, \"photos\": [], \"points_of_interest\": [], \"postal_code\": \"11201\", \"privacy_code\": null, \"rememberable\": false, \"segment_matches\": null, \"surface\": \"paved\", \"tag_names\": [], \"terrain\": \"flat\", \"track_id\": \"7274e83b6c657707f72d0000\", \"track_type\": \"loop\", \"unpaved_pct\": 0, \"updated_at\": \"2017-06-10T00:10:56-07:00\", \"user\": {\"account_level\": 1, \"administrative_area\": \"New York\", \"created_at\": \"2014-04-09T05:57:47-07:00\", \"description\": null, \"highlighted_photo_checksum\": null, \"highlighted_photo_id\": 0, \"id\": 256278, \"interests\": null, \"locality\": \"\", \"location\": \"New York\", \"name\": \"Mucow\", \"total_trip_distance\": 0, \"total_trip_duration\": 0, \"total_trip_elevation_gain\": 0.0}, \"user_id\": 256278, \"visibility\": 0}, \"type\": \"route\"}",
+    "content_type": "application/json; charset=utf-8",
+    "etag": "W/\"fc44306656a74e6433b640a871a71136\"",
+    "final_url": "https://ridewithgps.com/routes/5334050.json?api_key=None&version=2",
+    "status": 200
+  },
+  "route_id": 5334050,
+  "slug": "calculus-block",
+  "summary": {
+    "course_points": 7,
+    "metrics_distance_m": 1337.12656359757,
+    "metrics_ele_gain_m": 6.723807267515102,
+    "name": "Around the block... with calculus!",
+    "visibility": 0
+  },
+  "why": "LaTeX escaping torture test -- #, backslash, _, {, } all present in genuine descriptions. Tiny, stays in the fast tier."
+}

@@ -1,0 +1,152 @@
+[
+  {
+    "name": "known_left", 
+    "ok": true, 
+    "result": "L"
+  }, 
+  {
+    "name": "known_slight_left", 
+    "ok": true, 
+    "result": "L"
+  }, 
+  {
+    "name": "known_sharp_left", 
+    "ok": true, 
+    "result": "L"
+  }, 
+  {
+    "name": "known_right", 
+    "ok": true, 
+    "result": "R"
+  }, 
+  {
+    "name": "known_slight_right", 
+    "ok": true, 
+    "result": "R"
+  }, 
+  {
+    "name": "known_sharp_right", 
+    "ok": true, 
+    "result": "R"
+  }, 
+  {
+    "name": "known_straight", 
+    "ok": true, 
+    "result": "S"
+  }, 
+  {
+    "name": "known_food", 
+    "ok": true, 
+    "result": "PIT"
+  }, 
+  {
+    "name": "known_water", 
+    "ok": true, 
+    "result": "PIT"
+  }, 
+  {
+    "name": "known_danger", 
+    "ok": true, 
+    "result": "!"
+  }, 
+  {
+    "name": "known_start", 
+    "ok": true, 
+    "result": ""
+  }, 
+  {
+    "name": "known_end", 
+    "ok": true, 
+    "result": ""
+  }, 
+  {
+    "name": "known_generic", 
+    "ok": true, 
+    "result": ""
+  }, 
+  {
+    "name": "known_control", 
+    "ok": true, 
+    "result": ""
+  }, 
+  {
+    "name": "known_summit", 
+    "ok": true, 
+    "result": "^"
+  }, 
+  {
+    "name": "known_4th_category", 
+    "ok": true, 
+    "result": "C4"
+  }, 
+  {
+    "name": "known_3rd_category", 
+    "ok": true, 
+    "result": "C3"
+  }, 
+  {
+    "name": "known_2nd_category", 
+    "ok": true, 
+    "result": "C2"
+  }, 
+  {
+    "name": "known_1st_category", 
+    "ok": true, 
+    "result": "C1"
+  }, 
+  {
+    "name": "known_hors_category", 
+    "ok": true, 
+    "result": "CHC"
+  }, 
+  {
+    "name": "known_first_aid", 
+    "ok": true, 
+    "result": "+"
+  }, 
+  {
+    "name": "empty", 
+    "ok": true, 
+    "result": ""
+  }, 
+  {
+    "name": "unknown_custom", 
+    "ok": true, 
+    "result": "Test Instruction"
+  }, 
+  {
+    "name": "real_uturn", 
+    "ok": true, 
+    "result": "Uturn"
+  }, 
+  {
+    "name": "real_climb", 
+    "ok": true, 
+    "result": "Climb"
+  }, 
+  {
+    "name": "real_valley", 
+    "ok": true, 
+    "result": "Valley"
+  }, 
+  {
+    "name": "real_lowercase_right", 
+    "ok": true, 
+    "result": "right"
+  }, 
+  {
+    "name": "real_lowercase_left", 
+    "ok": true, 
+    "result": "left"
+  }, 
+  {
+    "name": "case_upper_left", 
+    "ok": true, 
+    "result": "LEFT"
+  }, 
+  {
+    "name": "whitespace_padded", 
+    "ok": true, 
+    "result": " Left "
+  }
+]

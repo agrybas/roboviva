@@ -1,0 +1,775 @@
+[
+  {
+    "name": "index",
+    "why": "GET /roboviva/ serves static/index.html through send_static_file (views.py:31-33).",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/",
+        "method": "GET"
+      }
+    ],
+    "script": []
+  },
+  {
+    "name": "static_asset_two_ways",
+    "why": "robo.css answers at BOTH /roboviva/robo.css (blueprint static, static_url_path='') and /robo.css (app static, also ''). Two mounts for the same directory, which a rewrite is likely to collapse.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/robo.css",
+        "method": "GET"
+      },
+      {
+        "do": "get",
+        "path": "/robo.css",
+        "method": "GET"
+      }
+    ],
+    "script": []
+  },
+  {
+    "name": "fresh_route_redirects_to_pdf",
+    "why": "A route with no cache entry: fetch, render, store, 302 to the PDF.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "regeneration_runs_pdflatex_twice",
+    "why": "THE DOUBLE RENDER. views.py:87 computes pdf_data, then views.py:102 calls latex2pdf(latex) AGAIN inside the open() block and writes that second result -- the first is discarded. Every cache miss pays for two full pdflatex runs. Almost certainly a copy-paste slip; pinned so the rewrite drops it deliberately.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "unchanged_etag_skips_rendering",
+    "why": "Second request with the same ETag: RideWithGPS answers 304, so no LaTeX and no pdflatex. This is what the cache is for.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      },
+      {
+        "raise": "http",
+        "status": 304
+      }
+    ]
+  },
+  {
+    "name": "changed_etag_regenerates",
+    "why": "The route was edited: a new ETag means a fresh render, so four pdflatex calls across two requests.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      },
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v2\""
+        },
+        "body": "{\"route\": {\"name\": \"Edited Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "pdf_served_inline",
+    "why": "send_from_directory with as_attachment=False (views.py:125-129). Whether a Content-Disposition header appears at all differs between Flask 1.x and modern Flask, so it is recorded explicitly.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/pdfs/123.pdf",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "missing_pdf_renders_regen_page",
+    "why": "A cached DB entry whose file is gone: GET /pdfs/<id>.pdf returns the regen page with HTTP 200, NOT a 404 (views.py:123-124).",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/pdfs/999.pdf",
+        "method": "GET"
+      }
+    ],
+    "script": []
+  },
+  {
+    "name": "pdf_deleted_after_caching",
+    "why": "The realistic version: render, delete the file, request it again.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "delete_pdf",
+        "route_id": 123
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/pdfs/123.pdf",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "invalid_route_id_error_page",
+    "why": "RideWithGpsError -> the 'is not a valid RideWithGPS Route' page at HTTP 200 (views.py:54-56). A 404 would be more honest but would let the browser show its own error page instead of the styled one.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "raise": "http",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "name": "upstream_500_also_blames_the_route_id",
+    "why": "Any non-304 HTTPError is turned into RideWithGpsError, so a RideWithGPS outage is reported to the rider as a bad route number.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "raise": "http",
+        "status": 500
+      }
+    ]
+  },
+  {
+    "name": "generic_fetch_failure_guru_0xFA",
+    "why": "A non-RideWithGpsError exception -> 'Guru Meditation: 0xFA' (views.py:57-61). Reached here by a malformed payload that makes the parser raise KeyError -- the same failure a missing api_key causes.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"x\""
+        },
+        "body": "{\"name\": \"flat shape\", \"course_points\": []}"
+      }
+    ]
+  },
+  {
+    "name": "pdf_render_failure_guru_0xFF",
+    "why": "latex2pdf raising -> 'Guru Meditation: 0xFF' (views.py:88-94).",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ],
+    "pdf_fails": true
+  },
+  {
+    "name": "unwritable_cache_dir_guru_0xCE",
+    "why": "PDF_CACHE_DIR missing -> 'Guru Meditation: 0xCE' (views.py:103-108). Reachable on a fresh clone: pdf_cache/ is gitignored and the app never creates it, so the very first request fails this way.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ],
+    "no_cache_dir": true
+  },
+  {
+    "name": "cache_empty",
+    "why": "GET /roboviva/cache on a cold start (views.py:131-161).",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "GET"
+      }
+    ],
+    "script": []
+  },
+  {
+    "name": "cache_age_seconds",
+    "why": "Age < 60 renders as '%d sec'.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "advance_clock",
+        "seconds": 30
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "cache_age_minutes",
+    "why": "60 < age < 3600 renders as '%d min'.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "advance_clock",
+        "seconds": 600
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "cache_age_hours",
+    "why": "3600 < age < 86400 renders as '%d hr'.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "advance_clock",
+        "seconds": 7200
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "cache_age_days",
+    "why": "age > 86400 renders as '%.1f days'.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "advance_clock",
+        "seconds": 200000
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "cache_age_exactly_60",
+    "why": "BOUNDARY: the chain is `< 60`, then `> 60 and < 3600`, so exactly 60 matches NOTHING and falls through to the days branch -- a one-minute-old entry is reported as '0.0 days' (views.py:148-155). Same hole at exactly 3600 and 86400.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "advance_clock",
+        "seconds": 60
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "cache_age_exactly_3600",
+    "why": "The second boundary hole.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "advance_clock",
+        "seconds": 3600
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "cache_age_exactly_86400",
+    "why": "The third boundary hole.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "advance_clock",
+        "seconds": 86400
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "cache_multiple_entries_sorted",
+    "why": "Rows are sorted by (timestamp, route_id, etag) (views.py:142), so oldest first.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/111",
+        "method": "GET"
+      },
+      {
+        "do": "advance_clock",
+        "seconds": 10
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/routes/222",
+        "method": "GET"
+      },
+      {
+        "do": "advance_clock",
+        "seconds": 10
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/routes/333",
+        "method": "GET"
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"a\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      },
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"b\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      },
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"c\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "cache_remove_hit",
+    "why": "Removes the DB entry -- but NOT the PDF file (views.py:163-173), so the file is orphaned on disk with nothing tracking it.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache/remove/123",
+        "method": "GET"
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "GET"
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/pdfs/123.pdf",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "cache_remove_miss",
+    "why": "Removing an unknown id is a no-op with a message.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/cache/remove/999",
+        "method": "GET"
+      }
+    ],
+    "script": []
+  },
+  {
+    "name": "cache_purge_deletes_old",
+    "why": "Entries older than the threshold lose both DB row and file (views.py:193-204).",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "advance_clock",
+        "seconds": 10000
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache/purge/3600",
+        "method": "GET"
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "cache_purge_retains_fresh",
+    "why": "Entries newer than the threshold are counted, not deleted.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "advance_clock",
+        "seconds": 60
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache/purge/3600",
+        "method": "GET"
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "cache_purge_missing_pdf_raises_500",
+    "why": "BUG: the retain branch calls os.stat unguarded (views.py:206), so a DB entry whose PDF was deleted -- exactly the state /cache/remove cannot create but a manual cleanup can -- takes the whole endpoint down with an unhandled OSError. The only 5xx in the app.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/123",
+        "method": "GET"
+      },
+      {
+        "do": "delete_pdf",
+        "route_id": 123
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache/purge/3600",
+        "method": "GET"
+      }
+    ],
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"v1\""
+        },
+        "body": "{\"route\": {\"name\": \"Probe Route\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Street 0\", \"d\": 400.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}}"
+      }
+    ]
+  },
+  {
+    "name": "non_numeric_route_id_404",
+    "why": "<int:route_id> rejects non-numeric segments before any handler runs, so this is a real Flask 404 rather than the styled error page.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/abc",
+        "method": "GET"
+      }
+    ],
+    "script": []
+  },
+  {
+    "name": "negative_route_id_404",
+    "why": "The int converter rejects '-1' too (no negative support by default).",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/routes/-1",
+        "method": "GET"
+      }
+    ],
+    "script": []
+  },
+  {
+    "name": "post_not_allowed",
+    "why": "No route declares methods=, so everything is GET/HEAD/OPTIONS only. The whole service is read-only and unauthenticated -- including the cache admin endpoints, which anyone can call.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "POST"
+      }
+    ],
+    "script": []
+  },
+  {
+    "name": "head_and_options_allowed",
+    "why": "Flask adds HEAD and OPTIONS automatically.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "HEAD"
+      },
+      {
+        "do": "get",
+        "path": "/roboviva/cache",
+        "method": "OPTIONS"
+      }
+    ],
+    "script": []
+  },
+  {
+    "name": "unknown_path_404",
+    "why": "Nothing catches unknown paths.",
+    "steps": [
+      {
+        "do": "get",
+        "path": "/roboviva/nope",
+        "method": "GET"
+      }
+    ],
+    "script": []
+  }
+]

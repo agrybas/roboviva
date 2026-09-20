@@ -1,0 +1,127 @@
+[
+  {
+    "name": "empty", 
+    "ok": true, 
+    "result": ""
+  }, 
+  {
+    "name": "plain", 
+    "ok": true, 
+    "result": "Main St"
+  }, 
+  {
+    "name": "backslash_single", 
+    "ok": true, 
+    "result": "\\textbackslash "
+  }, 
+  {
+    "name": "backslash_command", 
+    "ok": true, 
+    "result": "\\textbackslash testcommand"
+  }, 
+  {
+    "name": "backslash_double", 
+    "ok": true, 
+    "result": "\\textbackslash \\textbackslash "
+  }, 
+  {
+    "name": "underscore", 
+    "ok": true, 
+    "result": "\\textunderscore "
+  }, 
+  {
+    "name": "dollar", 
+    "ok": true, 
+    "result": "\\$"
+  }, 
+  {
+    "name": "hash", 
+    "ok": true, 
+    "result": "\\#"
+  }, 
+  {
+    "name": "ampersand", 
+    "ok": true, 
+    "result": "\\&"
+  }, 
+  {
+    "name": "pipe", 
+    "ok": true, 
+    "result": "$|$"
+  }, 
+  {
+    "name": "less_than", 
+    "ok": true, 
+    "result": "$<$"
+  }, 
+  {
+    "name": "greater_than", 
+    "ok": true, 
+    "result": "$\\Rightarrow$"
+  }, 
+  {
+    "name": "percent", 
+    "ok": true, 
+    "result": "\\%"
+  }, 
+  {
+    "name": "brace_open", 
+    "ok": true, 
+    "result": "\\{"
+  }, 
+  {
+    "name": "brace_close", 
+    "ok": true, 
+    "result": "\\}"
+  }, 
+  {
+    "name": "zwsp", 
+    "ok": true, 
+    "result": "a\\hspace{0pt}b"
+  }, 
+  {
+    "name": "tilde_not_escaped", 
+    "ok": true, 
+    "result": "~"
+  }, 
+  {
+    "name": "caret_not_escaped", 
+    "ok": true, 
+    "result": "^"
+  }, 
+  {
+    "name": "brackets_not_escaped", 
+    "ok": true, 
+    "result": "[x]"
+  }, 
+  {
+    "name": "quote_not_escaped", 
+    "ok": true, 
+    "result": "say \"hi\""
+  }, 
+  {
+    "name": "backtick_not_escaped", 
+    "ok": true, 
+    "result": "`"
+  }, 
+  {
+    "name": "backslash_then_amp", 
+    "ok": true, 
+    "result": "\\textbackslash \\&"
+  }, 
+  {
+    "name": "all_specials", 
+    "ok": true, 
+    "result": "\\# \\& \\$ \\textunderscore  $|$ $<$ $\\Rightarrow$ \\{ \\} \\textbackslash testcommand \\textbackslash \\textbackslash  \\%"
+  }, 
+  {
+    "name": "real_street_zwsp", 
+    "ok": true, 
+    "result": "Richardsville Rd/\\hspace{0pt}Sagamore Rd"
+  }, 
+  {
+    "name": "real_amp_street", 
+    "ok": true, 
+    "result": "Smith \\& Wesson Ave"
+  }
+]

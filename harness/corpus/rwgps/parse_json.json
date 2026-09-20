@@ -1,0 +1,242 @@
+[
+  {
+    "name": "no_course_points",
+    "why": "Zero course points still yields two entries: the synthesized 'Start of route' (ridewithgps.py:128-133) and 'End of route' (:159-164).",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "single_point",
+    "why": "Start, the point, End -- the minimum interesting sheet.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 800.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "missing_n_field",
+    "why": "'n' absent -> description becomes '' (ridewithgps.py:138-139).",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"d\": 100.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "missing_description_field",
+    "why": "'description' absent -> note becomes '' via the None guard at ridewithgps.py:396-397.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 100.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "note_present",
+    "why": "RWGPS 'description' becomes roboviva's NOTE -- the field inversion.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 100.0, \"description\": \"Bring cash\"}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "quick_turn_cluster",
+    "why": "Three points inside 0.1mi of each other all get Modifier.QUICK (ridewithgps.py:311-315).",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 1000.0}, {\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 1050.0}, {\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 1100.0}], \"metrics\": {\"distance\": 2000.0, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "slight_turn_by_description",
+    "why": "'Keep|Bear|Slight ' at the start of the description forces SLIGHT, regardless of distance (ridewithgps.py:309-310).",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Bear right onto Foo\", \"d\": 1000.0}], \"metrics\": {\"distance\": 2000.0, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "slight_case_sensitive",
+    "why": "The modifier regex has no re.I, so lowercase 'bear right' does NOT become SLIGHT -- it falls through to the distance check.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"bear right onto Foo\", \"d\": 1000.0}], \"metrics\": {\"distance\": 2000.0, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "zero_distance_first_point",
+    "why": "A point at d=0 makes prev_absolute_distance 0.0, which is FALSY, so the QUICK check at ridewithgps.py:311 is skipped entirely.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 0.0}, {\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 50.0}], \"metrics\": {\"distance\": 2000.0, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "custom_instruction_tag",
+    "why": "A [tag] overrides the instruction and clears the modifier, but the COLOR was already computed from the RWGPS type and is not recomputed (ridewithgps.py:380-388).",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Danger\", \"n\": \"[U] Sharp bend\", \"d\": 1000.0}], \"metrics\": {\"distance\": 2000.0, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "start_tag_promotes_entry",
+    "why": "A [start] tag makes cue_utils.AdjustStartAndEnd replace the synthesized start row (ridewithgps.py:174).",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Generic\", \"n\": \"[start] Real start\", \"d\": 100.0}, {\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 1000.0}], \"metrics\": {\"distance\": 2000.0, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "all_mapped_instruction_types",
+    "why": "Every RideWithGPS type the mapping knows about, in one route.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Left\", \"n\": \"Point 0\", \"d\": 500.0}, {\"t\": \"Slight Left\", \"n\": \"Point 1\", \"d\": 1000.0}, {\"t\": \"Sharp Left\", \"n\": \"Point 2\", \"d\": 1500.0}, {\"t\": \"Right\", \"n\": \"Point 3\", \"d\": 2000.0}, {\"t\": \"Slight Right\", \"n\": \"Point 4\", \"d\": 2500.0}, {\"t\": \"Sharp Right\", \"n\": \"Point 5\", \"d\": 3000.0}, {\"t\": \"Straight\", \"n\": \"Point 6\", \"d\": 3500.0}, {\"t\": \"Food\", \"n\": \"Point 7\", \"d\": 4000.0}, {\"t\": \"Water\", \"n\": \"Point 8\", \"d\": 4500.0}, {\"t\": \"Danger\", \"n\": \"Point 9\", \"d\": 5000.0}, {\"t\": \"Generic\", \"n\": \"Point 10\", \"d\": 5500.0}, {\"t\": \"Control\", \"n\": \"Point 11\", \"d\": 6000.0}, {\"t\": \"Summit\", \"n\": \"Point 12\", \"d\": 6500.0}, {\"t\": \"4th Category\", \"n\": \"Point 13\", \"d\": 7000.0}, {\"t\": \"3rd Category\", \"n\": \"Point 14\", \"d\": 7500.0}, {\"t\": \"2nd Category\", \"n\": \"Point 15\", \"d\": 8000.0}, {\"t\": \"1st Category\", \"n\": \"Point 16\", \"d\": 8500.0}, {\"t\": \"Hors Category\", \"n\": \"Point 17\", \"d\": 9000.0}, {\"t\": \"First Aid\", \"n\": \"Point 18\", \"d\": 9500.0}], \"metrics\": {\"distance\": 20000.0, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "unmapped_instruction_types",
+    "why": "Uturn / Climb / Valley and lowercase right/left, all seen in real public routes today, all passed through as literal strings.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Uturn\", \"n\": \"Make a U-turn\", \"d\": 500.0}, {\"t\": \"Climb\", \"n\": \"Steep climb ahead\", \"d\": 1000.0}, {\"t\": \"Valley\", \"n\": \"Descend\", \"d\": 1500.0}, {\"t\": \"right\", \"n\": \"Keep right\", \"d\": 2000.0}, {\"t\": \"left\", \"n\": \"Keep left\", \"d\": 2500.0}], \"metrics\": {\"distance\": 3000.0, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "unicode_and_zwsp",
+    "why": "Non-ASCII plus a zero-width space, as RideWithGPS actually emits.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"Rue de l'\\u00c9glise\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto A/\\u200bB\", \"d\": 500.0}, {\"t\": \"Right\", \"n\": \"Stra\\u00dfe\", \"d\": 1000.0}], \"metrics\": {\"distance\": 2000.0, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "zero_elevation_gain",
+    "why": "ele_gain of 0 is falsy, so _makeHeader omits the ft figure entirely.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 100.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 0.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "unit_conversion",
+    "why": "Pins Miles_Per_Meter=0.000621371192 and Feet_Per_Meter=3.28084 (ridewithgps.py:124-125) against exact metric inputs.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 1609.344}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 304.8}}, \"type\": \"route\"}"
+      }
+    ]
+  }
+]

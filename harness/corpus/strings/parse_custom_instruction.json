@@ -1,0 +1,62 @@
+[
+  {
+    "name": "empty",
+    "why": "Degenerate input.",
+    "description": ""
+  },
+  {
+    "name": "common",
+    "why": "The documented form (tips.html).",
+    "description": "[L/QR] Foo Bar"
+  },
+  {
+    "name": "leading_whitespace",
+    "why": "Allowed by ^\\s*.",
+    "description": "   [L/QR] Foo Bar"
+  },
+  {
+    "name": "empty_brackets",
+    "why": "[^\\]]+ requires >=1 char -> None.",
+    "description": "[] Foo Bar"
+  },
+  {
+    "name": "not_at_start",
+    "why": "Anchored -> None.",
+    "description": "Foo [L] Bar"
+  },
+  {
+    "name": "second_bracket_ignored",
+    "why": "Character class is not greedy across ']'.",
+    "description": "[L/QR] Foo [Rough]"
+  },
+  {
+    "name": "start_tag",
+    "why": "Feeds cue_utils.AdjustStartAndEnd.",
+    "description": "[start] Real start"
+  },
+  {
+    "name": "end_tag_capitalized",
+    "why": "Route 6260667 uses '[End]'; the comparison at cue_utils.py:28 lowercases, so case does not matter there.",
+    "description": "[End] Custom end entry"
+  },
+  {
+    "name": "tag_only",
+    "why": "No trailing text.",
+    "description": "[U]"
+  },
+  {
+    "name": "nested_brackets",
+    "why": "Inner ']' terminates the match.",
+    "description": "[a[b]c] Foo"
+  },
+  {
+    "name": "spaces_in_tag",
+    "why": "Route 6260667 uses '[Custom Instruction]'.",
+    "description": "[Custom Instruction] Foo"
+  },
+  {
+    "name": "latex_special_in_tag",
+    "why": "The tag becomes the instruction and is escaped downstream by _instructionToLatex.",
+    "description": "[R&D] Foo"
+  }
+]

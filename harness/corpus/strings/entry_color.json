@@ -1,0 +1,17 @@
+[
+  {
+    "name": "none",
+    "why": "Color.NONE -> None (no \\rowcolor emitted).",
+    "color": "None"
+  },
+  {
+    "name": "gray",
+    "why": "Color.GRAY -> '[gray]{0.8}'. Note latex_tests.py:109 still expects 0.7 -- that test is stale (commit 3fef5b0 'Made gray rows slightly lighter').",
+    "color": "Gray"
+  },
+  {
+    "name": "yellow",
+    "why": "Color.YELLOW -> '{yellow}'.",
+    "color": "Yellow"
+  }
+]

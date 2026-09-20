@@ -1,0 +1,137 @@
+[
+  {
+    "name": "empty", 
+    "ok": true, 
+    "result": ""
+  }, 
+  {
+    "name": "plain", 
+    "ok": true, 
+    "result": "Main St"
+  }, 
+  {
+    "name": "tag_stripped", 
+    "ok": true, 
+    "result": "Foo Bar"
+  }, 
+  {
+    "name": "tag_with_leading_space", 
+    "ok": true, 
+    "result": "Foo"
+  }, 
+  {
+    "name": "tag_empty_not_stripped", 
+    "ok": true, 
+    "result": "[] Foo"
+  }, 
+  {
+    "name": "tag_midstring_kept", 
+    "ok": true, 
+    "result": "Foo [Rough] Bar"
+  }, 
+  {
+    "name": "traffic_circle", 
+    "ok": true, 
+    "result": "@ Circle, foo"
+  }, 
+  {
+    "name": "traffic_circle_case", 
+    "ok": true, 
+    "result": "@ Circle, foo"
+  }, 
+  {
+    "name": "slight_left_toward", 
+    "ok": true, 
+    "result": "foo"
+  }, 
+  {
+    "name": "slight_right_onto", 
+    "ok": true, 
+    "result": "foo"
+  }, 
+  {
+    "name": "bear_left_on", 
+    "ok": true, 
+    "result": "foo"
+  }, 
+  {
+    "name": "keep_right_toward", 
+    "ok": true, 
+    "result": "foo"
+  }, 
+  {
+    "name": "keep_right_on_caps", 
+    "ok": true, 
+    "result": "foo"
+  }, 
+  {
+    "name": "turn_left_onto", 
+    "ok": true, 
+    "result": "foo"
+  }, 
+  {
+    "name": "bear_right_to_stay_on", 
+    "ok": true, 
+    "result": "TRO foo"
+  }, 
+  {
+    "name": "bear_right_to_remain_on", 
+    "ok": true, 
+    "result": "TRO foo"
+  }, 
+  {
+    "name": "mid_to_stay_on", 
+    "ok": true, 
+    "result": "Bar TRO Baz"
+  }, 
+  {
+    "name": "turn_left_bare", 
+    "ok": true, 
+    "result": "foo"
+  }, 
+  {
+    "name": "left_onto", 
+    "ok": true, 
+    "result": "foo"
+  }, 
+  {
+    "name": "continue_onto", 
+    "ok": true, 
+    "result": "foo"
+  }, 
+  {
+    "name": "continue_straight_onto", 
+    "ok": true, 
+    "result": "foo"
+  }, 
+  {
+    "name": "continue_straight_on", 
+    "ok": true, 
+    "result": "foo"
+  }, 
+  {
+    "name": "sharp_left_NOT_stripped", 
+    "ok": true, 
+    "result": "Sharp left onto Foo"
+  }, 
+  {
+    "name": "sharp_right_NOT_stripped", 
+    "ok": true, 
+    "result": "Sharp right onto Foo"
+  }, 
+  {
+    "name": "real_uturn", 
+    "ok": true, 
+    "result": "U-Turn to return from Millbrook Mountain Carriage Road"
+  }, 
+  {
+    "name": "real_keep_right", 
+    "ok": true, 
+    "result": "Keep right"
+  }, 
+  {
+    "name": "real_zwsp_street", 
+    "ok": true, 
+    "result": "Richardsville Rd/​Sagamore Rd"
+  }
+]

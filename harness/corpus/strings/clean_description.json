@@ -1,0 +1,137 @@
+[
+  {
+    "name": "empty",
+    "why": "Degenerate input.",
+    "description": ""
+  },
+  {
+    "name": "plain",
+    "why": "Nothing matches -- passes through.",
+    "description": "Main St"
+  },
+  {
+    "name": "tag_stripped",
+    "why": "Rule 1 removes the custom-instruction tag.",
+    "description": "[L/QR] Foo Bar"
+  },
+  {
+    "name": "tag_with_leading_space",
+    "why": "Leading whitespace is allowed.",
+    "description": "   [U] Foo"
+  },
+  {
+    "name": "tag_empty_not_stripped",
+    "why": "'[]' has no content, so [^\\]]+ fails.",
+    "description": "[] Foo"
+  },
+  {
+    "name": "tag_midstring_kept",
+    "why": "Rule 1 is anchored; a mid-string tag stays.",
+    "description": "Foo [Rough] Bar"
+  },
+  {
+    "name": "traffic_circle",
+    "why": "-> '@ Circle,'",
+    "description": "At the traffic circle, foo"
+  },
+  {
+    "name": "traffic_circle_case",
+    "why": "Case-insensitive.",
+    "description": "AT THE TRAFFIC CIRCLE, foo"
+  },
+  {
+    "name": "slight_left_toward",
+    "why": "Rule 3.",
+    "description": "Slight left toward foo"
+  },
+  {
+    "name": "slight_right_onto",
+    "why": "Rule 3.",
+    "description": "Slight right onto foo"
+  },
+  {
+    "name": "bear_left_on",
+    "why": "Rule 3.",
+    "description": "Bear left on foo"
+  },
+  {
+    "name": "keep_right_toward",
+    "why": "Rule 3.",
+    "description": "Keep right toward foo"
+  },
+  {
+    "name": "keep_right_on_caps",
+    "why": "Rule 3, case-insensitive.",
+    "description": "keep RIGHT ON foo"
+  },
+  {
+    "name": "turn_left_onto",
+    "why": "Rule 3 -- the single most common RWGPS string.",
+    "description": "Turn left onto foo"
+  },
+  {
+    "name": "bear_right_to_stay_on",
+    "why": "Rule 4 -> 'TRO foo'.",
+    "description": "Bear right to stay on foo"
+  },
+  {
+    "name": "bear_right_to_remain_on",
+    "why": "Rules 4+6 -> 'TRO foo'.",
+    "description": "Bear right to remain on foo"
+  },
+  {
+    "name": "mid_to_stay_on",
+    "why": "Rule 5 is unanchored and rewrites mid-string.",
+    "description": "Turn left onto Bar to stay on Baz"
+  },
+  {
+    "name": "turn_left_bare",
+    "why": "Rule 7, no preposition.",
+    "description": "Turn left foo"
+  },
+  {
+    "name": "left_onto",
+    "why": "Rule 8, no leading verb.",
+    "description": "Left onto foo"
+  },
+  {
+    "name": "continue_onto",
+    "why": "Rule 9.",
+    "description": "Continue onto foo"
+  },
+  {
+    "name": "continue_straight_onto",
+    "why": "Rule 10.",
+    "description": "Continue straight onto foo"
+  },
+  {
+    "name": "continue_straight_on",
+    "why": "Rule 10.",
+    "description": "Continue straight on foo"
+  },
+  {
+    "name": "sharp_left_NOT_stripped",
+    "why": "'Sharp left onto Foo' is UNCHANGED -- 'Sharp' is absent from the alternations at ridewithgps.py:254,255,258 even though 'Sharp Left' is a recognized instruction type (:268). Real routes hit this: 47438923 has Sharp Left/Sharp Right points.",
+    "description": "Sharp left onto Foo"
+  },
+  {
+    "name": "sharp_right_NOT_stripped",
+    "why": "Same gap, right side.",
+    "description": "Sharp right onto Foo"
+  },
+  {
+    "name": "real_uturn",
+    "why": "From route 55132669 (type 'Uturn', unmapped).",
+    "description": "U-Turn to return from Millbrook Mountain Carriage Road"
+  },
+  {
+    "name": "real_keep_right",
+    "why": "From route 56819245, where the type is the lowercase string 'right'.",
+    "description": "Keep right"
+  },
+  {
+    "name": "real_zwsp_street",
+    "why": "From route 47438923.",
+    "description": "Turn right onto Richardsville Rd/​Sagamore Rd"
+  }
+]

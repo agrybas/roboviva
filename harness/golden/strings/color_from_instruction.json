@@ -1,0 +1,77 @@
+[
+  {
+    "name": "left", 
+    "ok": true, 
+    "result": "None"
+  }, 
+  {
+    "name": "right", 
+    "ok": true, 
+    "result": "Gray"
+  }, 
+  {
+    "name": "straight", 
+    "ok": true, 
+    "result": "None"
+  }, 
+  {
+    "name": "pit", 
+    "ok": true, 
+    "result": "Yellow"
+  }, 
+  {
+    "name": "danger", 
+    "ok": true, 
+    "result": "Yellow"
+  }, 
+  {
+    "name": "crosses", 
+    "ok": true, 
+    "result": "None"
+  }, 
+  {
+    "name": "cat_hc", 
+    "ok": true, 
+    "result": "None"
+  }, 
+  {
+    "name": "cat_1", 
+    "ok": true, 
+    "result": "None"
+  }, 
+  {
+    "name": "cat_5", 
+    "ok": true, 
+    "result": "None"
+  }, 
+  {
+    "name": "summit", 
+    "ok": true, 
+    "result": "None"
+  }, 
+  {
+    "name": "first_aid", 
+    "ok": true, 
+    "result": "None"
+  }, 
+  {
+    "name": "none_empty_string", 
+    "ok": true, 
+    "result": "Gray"
+  }, 
+  {
+    "name": "custom_r_substring", 
+    "ok": true, 
+    "result": "Gray"
+  }, 
+  {
+    "name": "custom_multi_char", 
+    "ok": true, 
+    "result": "None"
+  }, 
+  {
+    "name": "custom_uturn", 
+    "ok": true, 
+    "result": "None"
+  }
+]

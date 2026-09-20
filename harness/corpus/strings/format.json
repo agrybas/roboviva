@@ -1,0 +1,187 @@
+[
+  {
+    "name": "legacy_basic_emph",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "*foo*"
+  },
+  {
+    "name": "legacy_basic_strong",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "**foo**"
+  },
+  {
+    "name": "legacy_strong_internal",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "foo**bar**baz"
+  },
+  {
+    "name": "legacy_emph_internal",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "foo*bar*baz"
+  },
+  {
+    "name": "legacy_emph_noclose",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "*foobar"
+  },
+  {
+    "name": "legacy_strong_noclose",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "**foobar"
+  },
+  {
+    "name": "legacy_emph_unbalanced",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "**foobar*"
+  },
+  {
+    "name": "legacy_emph_unbalanced2",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "*foobar**"
+  },
+  {
+    "name": "legacy_emph_strong_together",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "***foobar***"
+  },
+  {
+    "name": "legacy_star_with_escape",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "**foo \\* bar \\* baz**"
+  },
+  {
+    "name": "legacy_star_with_space",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "**foo * bar * baz**"
+  },
+  {
+    "name": "legacy_strong_in_emph",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "***strong** in emph*"
+  },
+  {
+    "name": "legacy_emph_in_strong",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "***emph* in strong**"
+  },
+  {
+    "name": "legacy_emph_in_strong_internal",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "**foo *bar* baz**"
+  },
+  {
+    "name": "legacy_strong_in_emph_internal",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "*foo **bar** baz*"
+  },
+  {
+    "name": "legacy_in_emph_strong",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "*in emph **strong***"
+  },
+  {
+    "name": "legacy_in_strong_emph",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "**in strong *emph***"
+  },
+  {
+    "name": "legacy_odd_nestings",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "*bar *baz**"
+  },
+  {
+    "name": "legacy_odd_nestings2",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "**bar* baz*"
+  },
+  {
+    "name": "legacy_pathological_nesting",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "**foo**bar**baz**"
+  },
+  {
+    "name": "legacy_delimiter_closing",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "*foo**bar***"
+  },
+  {
+    "name": "legacy_mismatches1",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "*bar***"
+  },
+  {
+    "name": "legacy_mismatches2",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "***foo*"
+  },
+  {
+    "name": "legacy_mismatches3",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "***bar**"
+  },
+  {
+    "name": "legacy_mismatches4",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "**bar***"
+  },
+  {
+    "name": "legacy_mismatches5",
+    "why": "From the table at latex_tests.py:191-218 -- the repo's own spec for the emphasis parser.",
+    "text": "***foo *bar*"
+  },
+  {
+    "name": "empty",
+    "why": "Degenerate input.",
+    "text": ""
+  },
+  {
+    "name": "no_markup",
+    "why": "Plain text must be untouched.",
+    "text": "Main St"
+  },
+  {
+    "name": "single_star",
+    "why": "One bare star, nothing to pair with.",
+    "text": "*"
+  },
+  {
+    "name": "double_star",
+    "why": "Two bare stars.",
+    "text": "**"
+  },
+  {
+    "name": "triple_star",
+    "why": "Three bare stars.",
+    "text": "***"
+  },
+  {
+    "name": "star_space_only",
+    "why": "Whitespace-delimited star is protected by the step-0 rule at latex.py:70.",
+    "text": "a * b"
+  },
+  {
+    "name": "doublestar_space_only",
+    "why": "Whitespace-delimited '**', latex.py:71.",
+    "text": "a ** b"
+  },
+  {
+    "name": "escaped_underscore",
+    "why": "The final rule un-escapes \\_ as well as \\*.",
+    "text": "foo\\_bar"
+  },
+  {
+    "name": "after_escape_backslash",
+    "why": "_format runs AFTER _escape, so it sees \\textbackslash already present. Pins that the emphasis regexes do not corrupt escape output.",
+    "text": "\\textbackslash foo *bar*"
+  },
+  {
+    "name": "after_escape_underscore",
+    "why": "Likewise for \\textunderscore.",
+    "text": "a\\textunderscore b **c**"
+  },
+  {
+    "name": "emph_with_escaped_specials",
+    "why": "Emphasis wrapping already-escaped text -- the realistic composition.",
+    "text": "**\\$5 toll**"
+  }
+]
