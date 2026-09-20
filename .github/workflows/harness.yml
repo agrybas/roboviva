@@ -1,0 +1,141 @@
+name: parity harness
+
+# The fast job runs on every push and needs no container: it checks the docs
+# and asserts the corpus and goldens are consistent with each other.
+#
+# The slow jobs build the Python 2 + TeX Live oracle image (~2.5GB) and are
+# scheduled rather than per-push, because the build is minutes and the
+# behaviour it measures only changes when the legacy code does -- which, on a
+# frozen branch, is never.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  schedule:
+    # Weekly: catch golden drift and RideWithGPS API drift.
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  docs-and-corpus:
+    name: docs + corpus consistency
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate documentation
+        # Every file.py:line citation must resolve and every link must work,
+        # otherwise the docs rot the moment code moves.
+        run: python3 docs/check_docs.py
+
+      - name: Corpus regenerates identically
+        # The corpus builders must be deterministic -- goldens are keyed by
+        # case name, so a builder that silently changes a case invalidates its
+        # golden without anything noticing.
+        run: |
+          python3 harness/corpus/build_corpus.py
+          python3 harness/corpus/build_latex_corpus.py
+          python3 harness/corpus/build_http_corpus.py
+          python3 harness/corpus/build_rwgps_corpus.py
+          git diff --exit-code harness/corpus/
+
+      - name: Every corpus case has a golden
+        run: |
+          python3 - <<'PY'
+          import json, os, sys
+          pairs = [
+              ("strings/escape.json",) * 2,
+              ("strings/format.json",) * 2,
+              ("strings/clean_description.json",) * 2,
+              ("strings/parse_custom_instruction.json",) * 2,
+              ("strings/instruction_str_to_cue.json",) * 2,
+              ("strings/color_from_instruction.json",) * 2,
+              ("strings/instruction_to_latex.json",) * 2,
+              ("strings/entry_color.json",) * 2,
+              ("model/entry_repr.json",) * 2,
+              ("model/route_repr.json",) * 2,
+              ("model/adjust_start_end.json",) * 2,
+              ("rwgps/fetch_json.json",) * 2,
+              ("rwgps/parse_json.json",) * 2,
+              ("rwgps/fetch_csv.json",) * 2,
+              ("latex/entry_rows.json",) * 2,
+              ("latex/documents.json",) * 2,
+              ("http/endpoints.json",) * 2,
+              ("cli/scripts.json",) * 2,
+          ]
+          bad = []
+          for corpus_rel, golden_rel in pairs:
+              c = json.load(open(os.path.join("harness/corpus", corpus_rel)))
+              g = json.load(open(os.path.join("harness/golden", golden_rel)))
+              names = {x["name"] for x in g}
+              for case in c:
+                  if case["name"] not in names:
+                      bad.append("%s: %s has no golden" % (corpus_rel, case["name"]))
+                  if not case.get("why"):
+                      bad.append("%s: %s has no 'why'" % (corpus_rel, case["name"]))
+          if bad:
+              print("\n".join(bad), file=sys.stderr)
+              sys.exit(1)
+          print("every corpus case has a golden and a rationale")
+          PY
+
+  parity-against-legacy:
+    name: pytest --sut=legacy
+    runs-on: ubuntu-latest
+    # Building TeX Live is slow; only do it where the answer can change.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cache the pre-fetched TeX package
+        uses: actions/cache@v4
+        with:
+          path: harness/oracle/.debcache
+          key: debcache-texlive-fonts-extra-2020.20210202-3
+
+      - name: Fetch large Debian packages
+        run: harness/oracle/fetch_debs.sh
+
+      - name: Build the oracle image
+        run: harness/oracle/run.sh build
+
+      - name: Goldens are reproducible
+        # If this fails, either the legacy code changed or the toolchain did.
+        # golden/environment.json records which.
+        run: harness/oracle/run.sh verify
+
+      - name: Install harness dependencies
+        run: |
+          python3 -m venv harness/.venv
+          harness/.venv/bin/pip install -r harness/requirements-dev.txt
+
+      - name: Harness is green against the Python 2 original
+        # The acceptance criterion for the harness itself. A failure here means
+        # the TESTS are wrong, not the code.
+        working-directory: harness
+        run: ../harness/.venv/bin/python -m pytest --sut=legacy
+
+  live-canary:
+    name: RideWithGPS shape canary
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    continue-on-error: true   # upstream drift is news, not a broken build
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install harness dependencies
+        run: |
+          python3 -m venv harness/.venv
+          harness/.venv/bin/pip install -r harness/requirements-dev.txt
+      - name: Have the recorded fixtures gone stale?
+        working-directory: harness
+        run: ../harness/.venv/bin/python -m pytest -m live
