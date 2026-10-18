@@ -1,0 +1,1107 @@
+[
+  {
+    "name": "index", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 0, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Roboviva</title>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"robo.css\">\n  <script src=\"robo.js\"></script>\n</head>\n\n<body>\n  <div class=\"outer\">\n  <div class=\"middle\">\n    <div class=\"stripe\" style=\"background-color:#FEEB31\"></div>\n    <div class=\"stripe\" style=\"background-color:#FEA600\"></div>\n    <div class=\"stripe\" style=\"background-color:#FD2637\"></div>\n    <div class=\"main\">\n      <span class=\"main-text\">\n        ridewithgps.com/routes/\n      </span>\n      <input type       = \"text\"\n             id         = \"routebox\"\n             size       = 7\n             maxlength  = 8\n             onkeyup    = \"return onKey(event)\"\n             onkeypress = \"return onKey(event)\">\n      <br>\n      <div id=\"viva_button\" class=\"viva_button_disabled\">\n        Enter Route #\n      </div>\n    </div>\n    <div class=\"stripe\" style=\"background-color:#B3D4E7\"></div>\n    <div class=\"stripe\" style=\"background-color:#57ACD6\"></div>\n    <div class=\"stripe\" style=\"background-color:#004C8D\"></div>\n    <div class=\"footer\">\n      Roboviva\n      <!--AUTO_VERSION-->\n      version 1.5.0 (commit 8429)\n      <!--END_AUTO_VERSION-->\n      &copy; 2014-2015 Mike Kocurek.\n      <a href=https://github.com/mucow24/roboviva/>Source</a> |\n      <a href=tips.html>Advanced Tips</a>\n    </div>\n  </div>\n  </div>\n</body>\n</html>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": []
+    }
+  }, 
+  {
+    "name": "static_asset_two_ways", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 0, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "body {\n  padding: 0;\n  margin: 0;\n  background-color: #ffffff;\n  text-align: left;\n  color: #000000;\n}\n\n.body_error {\n  background-color: black;\n  color: white;\n}\n\n.body_error a:link {\n  color: #00DED1;\n}\n\n.body_error a:visited {\n  color: #00DED1;\n}\n\n.body_error a:active {\n  color: #FFB372;\n}\n\n.stripe {\n  display: block;\n  background-color: #01d4ff;\n  border: 0;\n  outline: 0;\n  height: 25px;\n  width: 100%;\n  padding: 0px;\n  margin:  0;\n  display: block;\n  padding-right:10px;\n}\n\n.main {\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 900;\n  margin: 20px;\n  padding: 10px;\n  text-align: center;\n}\n\n.outer {\n  display:  table;\n  position: absolute;\n  height:   100%;\n  width:    100%;\n}\n\n.middle {\n  display: table-cell;\n  vertical-align: middle;\n}\n\n.footer {\n  position:      fixed;\n  left:          0px;\n  bottom:        0px;\n  color:         #CCCCCC;\n  font-family:   'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-style:    italic;\n  text-align:    left;\n  margin-left:   10px;\n  margin-bottom: 10px;\n  padding-right:  10px;\n  width:         100%;\n}\n\n.footer a:link    { color: #CCCCCC; }\n.footer a:visited { color: #CCCCCC; }\n.footer a:hover   { color: #CCCCCC; }\n.footer a:active  { color: #CCCCCC; }\n\n.tips_main {\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size:     12pt;\n  margin:        20px;\n  text-align:    left;\n  height:        100%;\n  line-height:   150%;\n}\n\n.tips_main h1 {\n  font-weight: 900;\n  font-size:   24pt;\n}\n\n.tips_main h2 {\n  font-weight: 900;\n  font-size:   18pt;\n}\n\n.tips_main p {\n  margin-left: 40px;\n}\n\n.tips_main ul {\n  list-style-type: none;\n  padding-top: 10px;\n  padding-left: 20px;\n  padding-right: 20px;\n  padding-bottom: 20px;\n}\n\n.tips_main li {\n  margin-bottom: 30px;\n}\n\n.tips_main img {\n  margin-top: 15px;\n  margin-bottom: 15px;\n  margin-left: 40px;\n  border-width: 2px;\n  border-color: black;\n  border-style: solid;\n}\n\n.tips_footer {\n  margin-top:  50px;\n  color:       #CCCCCC;\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-style:  italic;\n  text-align:  left;\n}\ninput[type=text] {\n  border-radius: 50px; \n  padding: 5px;\n  text-align: center;\n  -webkit-transition: all 0.30s ease-in-out;\n  -moz-transition: all 0.30s ease-in-out;\n  -ms-transition: all 0.30s ease-in-out;\n  -o-transition: all 0.30s ease-in-out;\n  outline: none;\n}\n\n.viva_button_disabled {\n  -webkit-transition: all 0.30s ease-in-out;\n  -moz-transition:    all 0.30s ease-in-out;\n  -ms-transition:     all 0.30s ease-in-out;\n  -o-transition:      all 0.30s ease-in-out;\n  margin-right:auto;\n  margin-left:auto;\n  margin-top: 30px;\n  border-radius: 50px;\n  padding: 5px;\n  text-align: center;\n  border-width: 4px;\n  border-color: #CCCCCC;\n  border-style: solid;\n  background-color: #AAAAAA;\n  width: 200px;\n  color: #EEEEEE;\n  font-weight: 200;\n  font-size: 24px; \n}\n\n.viva_button_enabled {\n  -webkit-transition: all 0.30s ease-in-out;\n  -moz-transition:    all 0.30s ease-in-out;\n  -ms-transition:     all 0.30s ease-in-out;\n  -o-transition:      all 0.30s ease-in-out;\n  margin-right:       auto;\n  margin-left:        auto;\n  margin-top:         30px;\n  border-radius:      50px;\n  padding:            5px;\n  text-align:         center;\n  border-width:       4px;\n  border-color:       #FEEB31;\n  border-style:       solid;\n  background-color:   #FFFFFF;\n  width:              200px;\n  color:              #000000;\n  font-weight:        900;\n  font-size:          24px; \n  text-decoration:    none;\n  box-shadow:         0 0 0 5px #FEA600, 0 0 0 10px #FD2637;\n  cursor:             pointer;\n}\n\n.viva_button_enabled:active {\n  border-color:     #B3D4E7;\n  box-shadow:       0 0 0 5px #57ACD6, 0 0 0 10px #004C8D;\n  color:            white;\n  background:       black;\n}\n\n@media only screen and (min-width: 0px) {\n  .main-text {\n    font-size: 34px;\n    text-align: center;\n    line-height:60px;\n  }\n  input {\n    font-size:34px;\n  }\n}\n\n@media only screen and (min-width: 700px) {\n  .main-text {\n    font-size: 36px;\n  }\n  input {\n    font-size:36px;\n  }\n}\n\n@media only screen and (min-width: 750px) {\n  .main-text {\n    font-size: 38px;\n  }\n  input {\n    font-size:38px;\n  }\n}\n@media only screen and (min-width: 850px) {\n  .main-text {\n    font-size: 44px;\n  }\n  input {\n    font-size:44px;\n  }\n}\n@media only screen and (min-width: 950px) {\n  .main-text {\n    font-size: 48px;\n  }\n  input {\n    font-size:48px;\n  }\n}\n@media only screen and (min-width: 1050px) {\n  .main-text {\n    font-size: 52px;\n  }\n  input {\n    font-size:52px;\n  }\n}\n\ninput {\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 900;\n}\n\n", 
+          "content_disposition": null, 
+          "content_type": "text/css; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/robo.css", 
+          "status": 200
+        }, 
+        {
+          "allow": null, 
+          "body": "body {\n  padding: 0;\n  margin: 0;\n  background-color: #ffffff;\n  text-align: left;\n  color: #000000;\n}\n\n.body_error {\n  background-color: black;\n  color: white;\n}\n\n.body_error a:link {\n  color: #00DED1;\n}\n\n.body_error a:visited {\n  color: #00DED1;\n}\n\n.body_error a:active {\n  color: #FFB372;\n}\n\n.stripe {\n  display: block;\n  background-color: #01d4ff;\n  border: 0;\n  outline: 0;\n  height: 25px;\n  width: 100%;\n  padding: 0px;\n  margin:  0;\n  display: block;\n  padding-right:10px;\n}\n\n.main {\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 900;\n  margin: 20px;\n  padding: 10px;\n  text-align: center;\n}\n\n.outer {\n  display:  table;\n  position: absolute;\n  height:   100%;\n  width:    100%;\n}\n\n.middle {\n  display: table-cell;\n  vertical-align: middle;\n}\n\n.footer {\n  position:      fixed;\n  left:          0px;\n  bottom:        0px;\n  color:         #CCCCCC;\n  font-family:   'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-style:    italic;\n  text-align:    left;\n  margin-left:   10px;\n  margin-bottom: 10px;\n  padding-right:  10px;\n  width:         100%;\n}\n\n.footer a:link    { color: #CCCCCC; }\n.footer a:visited { color: #CCCCCC; }\n.footer a:hover   { color: #CCCCCC; }\n.footer a:active  { color: #CCCCCC; }\n\n.tips_main {\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size:     12pt;\n  margin:        20px;\n  text-align:    left;\n  height:        100%;\n  line-height:   150%;\n}\n\n.tips_main h1 {\n  font-weight: 900;\n  font-size:   24pt;\n}\n\n.tips_main h2 {\n  font-weight: 900;\n  font-size:   18pt;\n}\n\n.tips_main p {\n  margin-left: 40px;\n}\n\n.tips_main ul {\n  list-style-type: none;\n  padding-top: 10px;\n  padding-left: 20px;\n  padding-right: 20px;\n  padding-bottom: 20px;\n}\n\n.tips_main li {\n  margin-bottom: 30px;\n}\n\n.tips_main img {\n  margin-top: 15px;\n  margin-bottom: 15px;\n  margin-left: 40px;\n  border-width: 2px;\n  border-color: black;\n  border-style: solid;\n}\n\n.tips_footer {\n  margin-top:  50px;\n  color:       #CCCCCC;\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-style:  italic;\n  text-align:  left;\n}\ninput[type=text] {\n  border-radius: 50px; \n  padding: 5px;\n  text-align: center;\n  -webkit-transition: all 0.30s ease-in-out;\n  -moz-transition: all 0.30s ease-in-out;\n  -ms-transition: all 0.30s ease-in-out;\n  -o-transition: all 0.30s ease-in-out;\n  outline: none;\n}\n\n.viva_button_disabled {\n  -webkit-transition: all 0.30s ease-in-out;\n  -moz-transition:    all 0.30s ease-in-out;\n  -ms-transition:     all 0.30s ease-in-out;\n  -o-transition:      all 0.30s ease-in-out;\n  margin-right:auto;\n  margin-left:auto;\n  margin-top: 30px;\n  border-radius: 50px;\n  padding: 5px;\n  text-align: center;\n  border-width: 4px;\n  border-color: #CCCCCC;\n  border-style: solid;\n  background-color: #AAAAAA;\n  width: 200px;\n  color: #EEEEEE;\n  font-weight: 200;\n  font-size: 24px; \n}\n\n.viva_button_enabled {\n  -webkit-transition: all 0.30s ease-in-out;\n  -moz-transition:    all 0.30s ease-in-out;\n  -ms-transition:     all 0.30s ease-in-out;\n  -o-transition:      all 0.30s ease-in-out;\n  margin-right:       auto;\n  margin-left:        auto;\n  margin-top:         30px;\n  border-radius:      50px;\n  padding:            5px;\n  text-align:         center;\n  border-width:       4px;\n  border-color:       #FEEB31;\n  border-style:       solid;\n  background-color:   #FFFFFF;\n  width:              200px;\n  color:              #000000;\n  font-weight:        900;\n  font-size:          24px; \n  text-decoration:    none;\n  box-shadow:         0 0 0 5px #FEA600, 0 0 0 10px #FD2637;\n  cursor:             pointer;\n}\n\n.viva_button_enabled:active {\n  border-color:     #B3D4E7;\n  box-shadow:       0 0 0 5px #57ACD6, 0 0 0 10px #004C8D;\n  color:            white;\n  background:       black;\n}\n\n@media only screen and (min-width: 0px) {\n  .main-text {\n    font-size: 34px;\n    text-align: center;\n    line-height:60px;\n  }\n  input {\n    font-size:34px;\n  }\n}\n\n@media only screen and (min-width: 700px) {\n  .main-text {\n    font-size: 36px;\n  }\n  input {\n    font-size:36px;\n  }\n}\n\n@media only screen and (min-width: 750px) {\n  .main-text {\n    font-size: 38px;\n  }\n  input {\n    font-size:38px;\n  }\n}\n@media only screen and (min-width: 850px) {\n  .main-text {\n    font-size: 44px;\n  }\n  input {\n    font-size:44px;\n  }\n}\n@media only screen and (min-width: 950px) {\n  .main-text {\n    font-size: 48px;\n  }\n  input {\n    font-size:48px;\n  }\n}\n@media only screen and (min-width: 1050px) {\n  .main-text {\n    font-size: 52px;\n  }\n  input {\n    font-size:52px;\n  }\n}\n\ninput {\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 900;\n}\n\n", 
+          "content_disposition": null, 
+          "content_type": "text/css; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/robo.css", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": []
+    }
+  }, 
+  {
+    "name": "fresh_route_redirects_to_pdf", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "regeneration_runs_pdflatex_twice", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "unchanged_etag_skips_rendering", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }, 
+        {
+          "headers": {
+            "If-none-match": "W/\"v1\""
+          }, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "changed_etag_regenerates", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 4, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }, 
+        {
+          "headers": {
+            "If-none-match": "W/\"v1\""
+          }, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "pdf_served_inline", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "allow": null, 
+          "body_bytes": 20, 
+          "body_prefix": "%PDF-", 
+          "content_disposition": null, 
+          "content_type": "application/pdf", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/pdfs/123.pdf", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "missing_pdf_renders_regen_page", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 0, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Robo-404!</title>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"/roboviva/robo.css\">\n</head>\n\n<body class=\"body_error\">\n  <div class=\"outer\">\n  <div class=\"middle\">\n    <div class=\"stripe\" style=\"background-color:#0114CE\"></div>\n    <div class=\"stripe\" style=\"background-color:#0159FF\"></div>\n    <div class=\"stripe\" style=\"background-color:#00DED1\"></div>\n    <div class=\"main\">\n      <span class=\"main-text\">\n        Uh-oh! The PDF for route #999 doesn't exist! <br>\n        <a href=\"/roboviva/routes/999\">Make it again?</a>\n      </span>\n    </div>\n    <div class=\"stripe\" style=\"background-color:#4C2B18\"></div>\n    <div class=\"stripe\" style=\"background-color:#A85329\"></div>\n    <div class=\"stripe\" style=\"background-color:#FFB372\"></div>\n  </div>\n  </div>\n</body>\n</html>", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/pdfs/999.pdf", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": []
+    }
+  }, 
+  {
+    "name": "pdf_deleted_after_caching", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "deleted": 123, 
+          "existed": true
+        }, 
+        {
+          "allow": null, 
+          "body": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Robo-404!</title>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"/roboviva/robo.css\">\n</head>\n\n<body class=\"body_error\">\n  <div class=\"outer\">\n  <div class=\"middle\">\n    <div class=\"stripe\" style=\"background-color:#0114CE\"></div>\n    <div class=\"stripe\" style=\"background-color:#0159FF\"></div>\n    <div class=\"stripe\" style=\"background-color:#00DED1\"></div>\n    <div class=\"main\">\n      <span class=\"main-text\">\n        Uh-oh! The PDF for route #123 doesn't exist! <br>\n        <a href=\"/roboviva/routes/123\">Make it again?</a>\n      </span>\n    </div>\n    <div class=\"stripe\" style=\"background-color:#4C2B18\"></div>\n    <div class=\"stripe\" style=\"background-color:#A85329\"></div>\n    <div class=\"stripe\" style=\"background-color:#FFB372\"></div>\n  </div>\n  </div>\n</body>\n</html>", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/pdfs/123.pdf", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "invalid_route_id_error_page", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 0, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Robo-Error!</title>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"/roboviva/robo.css\">\n</head>\n\n<body class=\"body_error\">\n  <div class=\"outer\">\n  <div class=\"middle\">\n    <div class=\"stripe\" style=\"background-color:#0114CE\"></div>\n    <div class=\"stripe\" style=\"background-color:#0159FF\"></div>\n    <div class=\"stripe\" style=\"background-color:#00DED1\"></div>\n    <div class=\"main\">\n      <span class=\"main-text\">\n        &#39;123&#39; is not a valid RideWithGPS Route :( <br>\n        \n      </span>\n    </div>\n    <div class=\"stripe\" style=\"background-color:#4C2B18\"></div>\n    <div class=\"stripe\" style=\"background-color:#A85329\"></div>\n    <div class=\"stripe\" style=\"background-color:#FFB372\"></div>\n  </div>\n  </div>\n</body>\n</html>", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "upstream_500_also_blames_the_route_id", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 0, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Robo-Error!</title>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"/roboviva/robo.css\">\n</head>\n\n<body class=\"body_error\">\n  <div class=\"outer\">\n  <div class=\"middle\">\n    <div class=\"stripe\" style=\"background-color:#0114CE\"></div>\n    <div class=\"stripe\" style=\"background-color:#0159FF\"></div>\n    <div class=\"stripe\" style=\"background-color:#00DED1\"></div>\n    <div class=\"main\">\n      <span class=\"main-text\">\n        &#39;123&#39; is not a valid RideWithGPS Route :( <br>\n        \n      </span>\n    </div>\n    <div class=\"stripe\" style=\"background-color:#4C2B18\"></div>\n    <div class=\"stripe\" style=\"background-color:#A85329\"></div>\n    <div class=\"stripe\" style=\"background-color:#FFB372\"></div>\n  </div>\n  </div>\n</body>\n</html>", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "generic_fetch_failure_guru_0xFA", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 0, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Robo-Error!</title>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"/roboviva/robo.css\">\n</head>\n\n<body class=\"body_error\">\n  <div class=\"outer\">\n  <div class=\"middle\">\n    <div class=\"stripe\" style=\"background-color:#0114CE\"></div>\n    <div class=\"stripe\" style=\"background-color:#0159FF\"></div>\n    <div class=\"stripe\" style=\"background-color:#00DED1\"></div>\n    <div class=\"main\">\n      <span class=\"main-text\">\n        Error querying RideWithGPS <br>\n        {Guru Meditation: 0xFA}\n      </span>\n    </div>\n    <div class=\"stripe\" style=\"background-color:#4C2B18\"></div>\n    <div class=\"stripe\" style=\"background-color:#A85329\"></div>\n    <div class=\"stripe\" style=\"background-color:#FFB372\"></div>\n  </div>\n  </div>\n</body>\n</html>", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "pdf_render_failure_guru_0xFF", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 1, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Robo-Error!</title>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"/roboviva/robo.css\">\n</head>\n\n<body class=\"body_error\">\n  <div class=\"outer\">\n  <div class=\"middle\">\n    <div class=\"stripe\" style=\"background-color:#0114CE\"></div>\n    <div class=\"stripe\" style=\"background-color:#0159FF\"></div>\n    <div class=\"stripe\" style=\"background-color:#00DED1\"></div>\n    <div class=\"main\">\n      <span class=\"main-text\">\n        Internal Error :( <br>\n        {Guru Meditation: 0xFF - Error Rendering PDF}\n      </span>\n    </div>\n    <div class=\"stripe\" style=\"background-color:#4C2B18\"></div>\n    <div class=\"stripe\" style=\"background-color:#A85329\"></div>\n    <div class=\"stripe\" style=\"background-color:#FFB372\"></div>\n  </div>\n  </div>\n</body>\n</html>", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "unwritable_cache_dir_guru_0xCE", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 1, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Robo-Error!</title>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"/roboviva/robo.css\">\n</head>\n\n<body class=\"body_error\">\n  <div class=\"outer\">\n  <div class=\"middle\">\n    <div class=\"stripe\" style=\"background-color:#0114CE\"></div>\n    <div class=\"stripe\" style=\"background-color:#0159FF\"></div>\n    <div class=\"stripe\" style=\"background-color:#00DED1\"></div>\n    <div class=\"main\">\n      <span class=\"main-text\">\n        Internal Error :( <br>\n        {Guru Meditation: 0xCE - Error writing PDF}\n      </span>\n    </div>\n    <div class=\"stripe\" style=\"background-color:#4C2B18\"></div>\n    <div class=\"stripe\" style=\"background-color:#A85329\"></div>\n    <div class=\"stripe\" style=\"background-color:#FFB372\"></div>\n  </div>\n  </div>\n</body>\n</html>", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "cache_empty", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 0, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "Cache has 0 entries\n<table border=1>\n  <tr><th>route id</th><th>md5</th><th>age</th><th>Remove?</th></tr>\n</table>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": []
+    }
+  }, 
+  {
+    "name": "cache_age_seconds", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "advanced_to": 1000030.0
+        }, 
+        {
+          "allow": null, 
+          "body": "Cache has 1 entries\n<table border=1>\n  <tr><th>route id</th><th>md5</th><th>age</th><th>Remove?</th></tr>\n  <tr>\n    <td>123</td>\n    <td>W/\"v1\"</td>\n    <td>30 sec</td>\n    <td><a href=/roboviva/cache/remove/123>Remove</a></td>\n  </tr>\n</table>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "cache_age_minutes", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "advanced_to": 1000600.0
+        }, 
+        {
+          "allow": null, 
+          "body": "Cache has 1 entries\n<table border=1>\n  <tr><th>route id</th><th>md5</th><th>age</th><th>Remove?</th></tr>\n  <tr>\n    <td>123</td>\n    <td>W/\"v1\"</td>\n    <td>10 min</td>\n    <td><a href=/roboviva/cache/remove/123>Remove</a></td>\n  </tr>\n</table>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "cache_age_hours", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "advanced_to": 1007200.0
+        }, 
+        {
+          "allow": null, 
+          "body": "Cache has 1 entries\n<table border=1>\n  <tr><th>route id</th><th>md5</th><th>age</th><th>Remove?</th></tr>\n  <tr>\n    <td>123</td>\n    <td>W/\"v1\"</td>\n    <td>2 hr</td>\n    <td><a href=/roboviva/cache/remove/123>Remove</a></td>\n  </tr>\n</table>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "cache_age_days", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "advanced_to": 1200000.0
+        }, 
+        {
+          "allow": null, 
+          "body": "Cache has 1 entries\n<table border=1>\n  <tr><th>route id</th><th>md5</th><th>age</th><th>Remove?</th></tr>\n  <tr>\n    <td>123</td>\n    <td>W/\"v1\"</td>\n    <td>2.3 days</td>\n    <td><a href=/roboviva/cache/remove/123>Remove</a></td>\n  </tr>\n</table>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "cache_age_exactly_60", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "advanced_to": 1000060.0
+        }, 
+        {
+          "allow": null, 
+          "body": "Cache has 1 entries\n<table border=1>\n  <tr><th>route id</th><th>md5</th><th>age</th><th>Remove?</th></tr>\n  <tr>\n    <td>123</td>\n    <td>W/\"v1\"</td>\n    <td>0.0 days</td>\n    <td><a href=/roboviva/cache/remove/123>Remove</a></td>\n  </tr>\n</table>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "cache_age_exactly_3600", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "advanced_to": 1003600.0
+        }, 
+        {
+          "allow": null, 
+          "body": "Cache has 1 entries\n<table border=1>\n  <tr><th>route id</th><th>md5</th><th>age</th><th>Remove?</th></tr>\n  <tr>\n    <td>123</td>\n    <td>W/\"v1\"</td>\n    <td>0.0 days</td>\n    <td><a href=/roboviva/cache/remove/123>Remove</a></td>\n  </tr>\n</table>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "cache_age_exactly_86400", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "advanced_to": 1086400.0
+        }, 
+        {
+          "allow": null, 
+          "body": "Cache has 1 entries\n<table border=1>\n  <tr><th>route id</th><th>md5</th><th>age</th><th>Remove?</th></tr>\n  <tr>\n    <td>123</td>\n    <td>W/\"v1\"</td>\n    <td>1.0 days</td>\n    <td><a href=/roboviva/cache/remove/123>Remove</a></td>\n  </tr>\n</table>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "cache_multiple_entries_sorted", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 6, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/111.pdf\">/roboviva/pdfs/111.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/111.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/111", 
+          "status": 302
+        }, 
+        {
+          "advanced_to": 1000010.0
+        }, 
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/222.pdf\">/roboviva/pdfs/222.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/222.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/222", 
+          "status": 302
+        }, 
+        {
+          "advanced_to": 1000020.0
+        }, 
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/333.pdf\">/roboviva/pdfs/333.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/333.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/333", 
+          "status": 302
+        }, 
+        {
+          "allow": null, 
+          "body": "Cache has 3 entries\n<table border=1>\n  <tr><th>route id</th><th>md5</th><th>age</th><th>Remove?</th></tr>\n  <tr>\n    <td>111</td>\n    <td>W/\"a\"</td>\n    <td>20 sec</td>\n    <td><a href=/roboviva/cache/remove/111>Remove</a></td>\n  </tr>\n  <tr>\n    <td>222</td>\n    <td>W/\"b\"</td>\n    <td>10 sec</td>\n    <td><a href=/roboviva/cache/remove/222>Remove</a></td>\n  </tr>\n  <tr>\n    <td>333</td>\n    <td>W/\"c\"</td>\n    <td>0 sec</td>\n    <td><a href=/roboviva/cache/remove/333>Remove</a></td>\n  </tr>\n</table>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/111.json?api_key=None&version=2"
+        }, 
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/222.json?api_key=None&version=2"
+        }, 
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/333.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "cache_remove_hit", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "allow": null, 
+          "body": "123 removed from cache", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache/remove/123", 
+          "status": 200
+        }, 
+        {
+          "allow": null, 
+          "body": "Cache has 0 entries\n<table border=1>\n  <tr><th>route id</th><th>md5</th><th>age</th><th>Remove?</th></tr>\n</table>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache", 
+          "status": 200
+        }, 
+        {
+          "allow": null, 
+          "body_bytes": 20, 
+          "body_prefix": "%PDF-", 
+          "content_disposition": null, 
+          "content_type": "application/pdf", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/pdfs/123.pdf", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "cache_remove_miss", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 0, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "999 not found in cache", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache/remove/999", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": []
+    }
+  }, 
+  {
+    "name": "cache_purge_deletes_old", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "advanced_to": 1010000.0
+        }, 
+        {
+          "allow": null, 
+          "body": "Cache has 1 entries\n<table border=1>\n  <tr><th>route id</th><th>md5</th><th>age (s)</th><th>status</th></tr>\n  <tr><td>123</td><td>W/\"v1\"</td><td>10000</td><td>DELETED</td></tr>\n</table>\n0 kB deleted, 0 kB remaining", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache/purge/3600", 
+          "status": 200
+        }, 
+        {
+          "allow": null, 
+          "body": "Cache has 0 entries\n<table border=1>\n  <tr><th>route id</th><th>md5</th><th>age</th><th>Remove?</th></tr>\n</table>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "cache_purge_retains_fresh", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "advanced_to": 1000060.0
+        }, 
+        {
+          "allow": null, 
+          "body": "Cache has 1 entries\n<table border=1>\n  <tr><th>route id</th><th>md5</th><th>age (s)</th><th>status</th></tr>\n  <tr><td>123</td><td>W/\"v1\"</td><td>60</td><td></td></tr>\n</table>\n0 kB deleted, 0 kB remaining", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache/purge/3600", 
+          "status": 200
+        }, 
+        {
+          "allow": null, 
+          "body": "Cache has 1 entries\n<table border=1>\n  <tr><th>route id</th><th>md5</th><th>age</th><th>Remove?</th></tr>\n  <tr>\n    <td>123</td>\n    <td>W/\"v1\"</td>\n    <td>0.0 days</td>\n    <td><a href=/roboviva/cache/remove/123>Remove</a></td>\n  </tr>\n</table>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "cache_purge_missing_pdf_raises_500", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 2, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to target URL: <a href=\"/roboviva/pdfs/123.pdf\">/roboviva/pdfs/123.pdf</a>.  If not click the link.", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": "http://localhost/roboviva/pdfs/123.pdf", 
+          "method": "GET", 
+          "path": "/roboviva/routes/123", 
+          "status": 302
+        }, 
+        {
+          "deleted": 123, 
+          "existed": true
+        }, 
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>500 Internal Server Error</title>\n<h1>Internal Server Error</h1>\n<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/cache/purge/3600", 
+          "status": 500
+        }
+      ], 
+      "rwgps_requests": [
+        {
+          "headers": {}, 
+          "timeout": 5, 
+          "url": "http://ridewithgps.com/routes/123.json?api_key=None&version=2"
+        }
+      ]
+    }
+  }, 
+  {
+    "name": "non_numeric_route_id_404", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 0, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/routes/abc", 
+          "status": 404
+        }
+      ], 
+      "rwgps_requests": []
+    }
+  }, 
+  {
+    "name": "negative_route_id_404", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 0, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/routes/-1", 
+          "status": 404
+        }
+      ], 
+      "rwgps_requests": []
+    }
+  }, 
+  {
+    "name": "post_not_allowed", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 0, 
+      "responses": [
+        {
+          "allow": "HEAD, GET, OPTIONS", 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>405 Method Not Allowed</title>\n<h1>Method Not Allowed</h1>\n<p>The method is not allowed for the requested URL.</p>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "POST", 
+          "path": "/roboviva/cache", 
+          "status": 405
+        }
+      ], 
+      "rwgps_requests": []
+    }
+  }, 
+  {
+    "name": "head_and_options_allowed", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 0, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "HEAD", 
+          "path": "/roboviva/cache", 
+          "status": 200
+        }, 
+        {
+          "allow": "HEAD, GET, OPTIONS", 
+          "body": "", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "OPTIONS", 
+          "path": "/roboviva/cache", 
+          "status": 200
+        }
+      ], 
+      "rwgps_requests": []
+    }
+  }, 
+  {
+    "name": "unknown_path_404", 
+    "ok": true, 
+    "result": {
+      "pdflatex_calls": 0, 
+      "responses": [
+        {
+          "allow": null, 
+          "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n", 
+          "content_disposition": null, 
+          "content_type": "text/html; charset=utf-8", 
+          "location": null, 
+          "method": "GET", 
+          "path": "/roboviva/nope", 
+          "status": 404
+        }
+      ], 
+      "rwgps_requests": []
+    }
+  }
+]

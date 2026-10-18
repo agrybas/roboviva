@@ -1,0 +1,127 @@
+[
+  {
+    "name": "empty",
+    "why": "Degenerate input.",
+    "text": ""
+  },
+  {
+    "name": "plain",
+    "why": "No special characters -- must pass through untouched.",
+    "text": "Main St"
+  },
+  {
+    "name": "backslash_single",
+    "why": "The leading rule re.sub(r'\\\\([^\\\\]?)') consumes the char after the backslash.",
+    "text": "\\"
+  },
+  {
+    "name": "backslash_command",
+    "why": "A LaTeX-looking command must be neutralized.",
+    "text": "\\testcommand"
+  },
+  {
+    "name": "backslash_double",
+    "why": "Two backslashes: the [^\\\\] class means the first rule does not pair them.",
+    "text": "\\\\"
+  },
+  {
+    "name": "underscore",
+    "why": "-> \\textunderscore with a trailing space.",
+    "text": "_"
+  },
+  {
+    "name": "dollar",
+    "why": "-> \\$",
+    "text": "$"
+  },
+  {
+    "name": "hash",
+    "why": "-> \\#",
+    "text": "#"
+  },
+  {
+    "name": "ampersand",
+    "why": "-> \\& ; would otherwise be a tabular column break.",
+    "text": "&"
+  },
+  {
+    "name": "pipe",
+    "why": "-> $|$ (math mode, not an escape).",
+    "text": "|"
+  },
+  {
+    "name": "less_than",
+    "why": "-> $<$",
+    "text": "<"
+  },
+  {
+    "name": "greater_than",
+    "why": "-> $\\Rightarrow$ -- an ARROW, not a literal '>'. Asymmetric with '<' and almost certainly deliberate: cue sheets write 'A > B' to mean 'A leads to B'.",
+    "text": ">"
+  },
+  {
+    "name": "percent",
+    "why": "-> \\% ; would otherwise comment out the rest of the row.",
+    "text": "%"
+  },
+  {
+    "name": "brace_open",
+    "why": "-> \\{",
+    "text": "{"
+  },
+  {
+    "name": "brace_close",
+    "why": "-> \\}",
+    "text": "}"
+  },
+  {
+    "name": "zwsp",
+    "why": "U+200B -> \\hspace{0pt}. This rule runs LAST, so the braces it introduces are not themselves escaped. Commit 2278d0d.",
+    "text": "a​b"
+  },
+  {
+    "name": "tilde_not_escaped",
+    "why": "'~' is a LaTeX non-breaking space and is NOT escaped. Latent rendering bug, frozen as-is.",
+    "text": "~"
+  },
+  {
+    "name": "caret_not_escaped",
+    "why": "'^' is superscript in math mode and is NOT escaped.",
+    "text": "^"
+  },
+  {
+    "name": "brackets_not_escaped",
+    "why": "'[' and ']' are NOT escaped.",
+    "text": "[x]"
+  },
+  {
+    "name": "quote_not_escaped",
+    "why": "'\"' is NOT escaped.",
+    "text": "say \"hi\""
+  },
+  {
+    "name": "backtick_not_escaped",
+    "why": "'`' is NOT escaped.",
+    "text": "`"
+  },
+  {
+    "name": "backslash_then_amp",
+    "why": "'\\&' exercises rule order: backslash first, then '&'.",
+    "text": "\\&"
+  },
+  {
+    "name": "all_specials",
+    "why": "The kitchen sink, matching latex_tests.py:97.",
+    "text": "# & $ _ | < > { } \\testcommand \\\\ %"
+  },
+  {
+    "name": "real_street_zwsp",
+    "why": "Verbatim from route 47438923: RWGPS joins street names with a zero-width space.",
+    "text": "Richardsville Rd/​Sagamore Rd"
+  },
+  {
+    "name": "real_amp_street",
+    "why": "Verbatim shape from route 47438923.",
+    "text": "Smith & Wesson Ave"
+  }
+]

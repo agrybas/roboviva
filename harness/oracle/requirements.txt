@@ -1,0 +1,14 @@
+# Python 2.7 dependencies for running the legacy Roboviva app.
+#
+# These are the last releases of each project that still support py2.7, and the
+# newest versions that can import the legacy code. They are NOT what the
+# original deployment used (nothing in the repo pins versions) -- they are the
+# closest reproducible approximation, which is why the harness records observed
+# behavior rather than trusting these to be historically exact.
+Flask==1.1.4
+Werkzeug==1.0.1
+Jinja2==2.11.3
+itsdangerous==1.1.0
+MarkupSafe==1.1.1
+click==7.1.2
+Flask-Shelve==0.1.1

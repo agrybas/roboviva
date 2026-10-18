@@ -1,0 +1,27 @@
+[
+  {
+    "name": "empty", 
+    "ok": true, 
+    "result": "Route:\n  Name:  \"None\"  Id:    123  Climb: None ft  Length: 10.0 mi\n"
+  }, 
+  {
+    "name": "minimal", 
+    "ok": true, 
+    "result": "Route:\n  Name:  \"None\"  Id:    123  Climb: None ft  Length: 10.0 mi\n    Entry[L |  0.00 |       | Foo |  | None]\n"
+  }, 
+  {
+    "name": "full", 
+    "ok": true, 
+    "result": "Route:\n  Name:  \"Test Route\"  Id:    456  Climb: 1000.0 ft  Length: 1.0 mi\n    Entry[ |  0.00 |  1.00 | Start of route |  | None]\n    Entry[R |  1.00 |       | Foo St. |  | None]\n"
+  }, 
+  {
+    "name": "string_id", 
+    "ok": true, 
+    "result": "Route:\n  Name:  \"None\"  Id:    6260667  Climb: None ft  Length: 10.0 mi\n    Entry[L |  0.00 |       | Foo |  | None]\n"
+  }, 
+  {
+    "name": "unicode_name", 
+    "ok": true, 
+    "result": "Route:\n  Name:  \"Φθινοπωρινός\"  Id:    123  Climb: None ft  Length: 10.0 mi\n    Entry[L |  0.00 |       | Foo |  | None]\n"
+  }
+]

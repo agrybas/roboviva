@@ -1,0 +1,17 @@
+[
+  {
+    "name": "none", 
+    "ok": true, 
+    "result": null
+  }, 
+  {
+    "name": "gray", 
+    "ok": true, 
+    "result": "[gray]{0.8}"
+  }, 
+  {
+    "name": "yellow", 
+    "ok": true, 
+    "result": "{yellow}"
+  }
+]

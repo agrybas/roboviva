@@ -1,0 +1,669 @@
+[
+  {
+    "name": "no_tags", 
+    "ok": true, 
+    "result": {
+      "elevation_gain_ft": null, 
+      "entries": [
+        {
+          "absolute_distance": 0.0, 
+          "color": "None", 
+          "description": "Start of route", 
+          "for_distance": 1.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.0, 
+          "color": "None", 
+          "description": "Entry 1", 
+          "for_distance": 0.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.5, 
+          "color": "None", 
+          "description": "Entry 2", 
+          "for_distance": 2.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 4.0, 
+          "color": "None", 
+          "description": "Entry 3", 
+          "for_distance": 1.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 5.0, 
+          "color": "None", 
+          "description": "Entry 4", 
+          "for_distance": 3.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 8.0, 
+          "color": "None", 
+          "description": "End of route", 
+          "for_distance": null, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }
+      ], 
+      "id": 12345, 
+      "length_mi": 8.0, 
+      "name": null
+    }
+  }, 
+  {
+    "name": "start_only", 
+    "ok": true, 
+    "result": {
+      "elevation_gain_ft": 1000.0, 
+      "entries": [
+        {
+          "absolute_distance": 0.0, 
+          "color": "None", 
+          "description": "foo", 
+          "for_distance": 1.0, 
+          "instruction": "", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.0, 
+          "color": "None", 
+          "description": "Entry 1", 
+          "for_distance": 0.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.5, 
+          "color": "None", 
+          "description": "Entry 2", 
+          "for_distance": 3.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 5.0, 
+          "color": "None", 
+          "description": "Entry 4", 
+          "for_distance": 3.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 8.0, 
+          "color": "None", 
+          "description": "End of route", 
+          "for_distance": null, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }
+      ], 
+      "id": 12345, 
+      "length_mi": 8.0, 
+      "name": "Test Route"
+    }
+  }, 
+  {
+    "name": "end_only", 
+    "ok": true, 
+    "result": {
+      "elevation_gain_ft": 1000.0, 
+      "entries": [
+        {
+          "absolute_distance": 0.0, 
+          "color": "None", 
+          "description": "Start of route", 
+          "for_distance": 1.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.0, 
+          "color": "None", 
+          "description": "Entry 1", 
+          "for_distance": 0.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.5, 
+          "color": "None", 
+          "description": "Entry 2", 
+          "for_distance": 3.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 5.0, 
+          "color": "None", 
+          "description": "Entry 4", 
+          "for_distance": 3.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 8.0, 
+          "color": "None", 
+          "description": "foo", 
+          "for_distance": null, 
+          "instruction": "", 
+          "modifier": "", 
+          "note": ""
+        }
+      ], 
+      "id": 12345, 
+      "length_mi": 8.0, 
+      "name": "Test Route"
+    }
+  }, 
+  {
+    "name": "start_uppercase", 
+    "ok": true, 
+    "result": {
+      "elevation_gain_ft": 1000.0, 
+      "entries": [
+        {
+          "absolute_distance": 0.0, 
+          "color": "None", 
+          "description": "foo", 
+          "for_distance": 1.0, 
+          "instruction": "", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.0, 
+          "color": "None", 
+          "description": "Entry 1", 
+          "for_distance": 0.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.5, 
+          "color": "None", 
+          "description": "Entry 2", 
+          "for_distance": 3.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 5.0, 
+          "color": "None", 
+          "description": "Entry 4", 
+          "for_distance": 3.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 8.0, 
+          "color": "None", 
+          "description": "End of route", 
+          "for_distance": null, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }
+      ], 
+      "id": 12345, 
+      "length_mi": 8.0, 
+      "name": "Test Route"
+    }
+  }, 
+  {
+    "name": "end_mixed_case", 
+    "ok": true, 
+    "result": {
+      "elevation_gain_ft": 1000.0, 
+      "entries": [
+        {
+          "absolute_distance": 0.0, 
+          "color": "None", 
+          "description": "Start of route", 
+          "for_distance": 1.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.0, 
+          "color": "None", 
+          "description": "Entry 1", 
+          "for_distance": 0.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.5, 
+          "color": "None", 
+          "description": "Entry 2", 
+          "for_distance": 3.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 5.0, 
+          "color": "None", 
+          "description": "Entry 4", 
+          "for_distance": 3.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 8.0, 
+          "color": "None", 
+          "description": "foo", 
+          "for_distance": null, 
+          "instruction": "", 
+          "modifier": "", 
+          "note": ""
+        }
+      ], 
+      "id": 12345, 
+      "length_mi": 8.0, 
+      "name": "Test Route"
+    }
+  }, 
+  {
+    "name": "start_at_index_1", 
+    "ok": true, 
+    "result": {
+      "elevation_gain_ft": 1000.0, 
+      "entries": [
+        {
+          "absolute_distance": 0.0, 
+          "color": "None", 
+          "description": "foo", 
+          "for_distance": 1.5, 
+          "instruction": "", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.5, 
+          "color": "None", 
+          "description": "Entry 2", 
+          "for_distance": 2.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 4.0, 
+          "color": "None", 
+          "description": "Entry 3", 
+          "for_distance": 1.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 5.0, 
+          "color": "None", 
+          "description": "Entry 4", 
+          "for_distance": 3.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 8.0, 
+          "color": "None", 
+          "description": "End of route", 
+          "for_distance": null, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }
+      ], 
+      "id": 12345, 
+      "length_mi": 8.0, 
+      "name": "Test Route"
+    }
+  }, 
+  {
+    "name": "end_at_penultimate", 
+    "ok": true, 
+    "result": {
+      "elevation_gain_ft": 1000.0, 
+      "entries": [
+        {
+          "absolute_distance": 0.0, 
+          "color": "None", 
+          "description": "Start of route", 
+          "for_distance": 1.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.0, 
+          "color": "None", 
+          "description": "Entry 1", 
+          "for_distance": 0.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.5, 
+          "color": "None", 
+          "description": "Entry 2", 
+          "for_distance": 2.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 4.0, 
+          "color": "None", 
+          "description": "Entry 3", 
+          "for_distance": 4.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 8.0, 
+          "color": "None", 
+          "description": "foo", 
+          "for_distance": null, 
+          "instruction": "", 
+          "modifier": "", 
+          "note": ""
+        }
+      ], 
+      "id": 12345, 
+      "length_mi": 8.0, 
+      "name": "Test Route"
+    }
+  }, 
+  {
+    "name": "end_at_last_index", 
+    "ok": true, 
+    "result": {
+      "elevation_gain_ft": 1000.0, 
+      "entries": [
+        {
+          "absolute_distance": 0.0, 
+          "color": "None", 
+          "description": "Start of route", 
+          "for_distance": 1.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.0, 
+          "color": "None", 
+          "description": "Entry 1", 
+          "for_distance": 0.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.5, 
+          "color": "None", 
+          "description": "Entry 2", 
+          "for_distance": 2.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 4.0, 
+          "color": "None", 
+          "description": "Entry 3", 
+          "for_distance": 1.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 5.0, 
+          "color": "None", 
+          "description": "Entry 4", 
+          "for_distance": 3.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 8.0, 
+          "color": "None", 
+          "description": "foo", 
+          "for_distance": null, 
+          "instruction": "end", 
+          "modifier": "", 
+          "note": ""
+        }
+      ], 
+      "id": 12345, 
+      "length_mi": 8.0, 
+      "name": "Test Route"
+    }
+  }, 
+  {
+    "error": {
+      "message": "list index out of range", 
+      "type": "IndexError"
+    }, 
+    "name": "start_at_last_index", 
+    "ok": false
+  }, 
+  {
+    "name": "start_at_index_0", 
+    "ok": true, 
+    "result": {
+      "elevation_gain_ft": 1000.0, 
+      "entries": [
+        {
+          "absolute_distance": 1.0, 
+          "color": "None", 
+          "description": "Entry 1", 
+          "for_distance": 0.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.5, 
+          "color": "None", 
+          "description": "Entry 2", 
+          "for_distance": 2.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 4.0, 
+          "color": "None", 
+          "description": "Entry 3", 
+          "for_distance": 1.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 5.0, 
+          "color": "None", 
+          "description": "Entry 4", 
+          "for_distance": 3.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 8.0, 
+          "color": "None", 
+          "description": "End of route", 
+          "for_distance": -7.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }
+      ], 
+      "id": 12345, 
+      "length_mi": 8.0, 
+      "name": "Test Route"
+    }
+  }, 
+  {
+    "name": "both_start_and_end", 
+    "ok": true, 
+    "result": {
+      "elevation_gain_ft": null, 
+      "entries": [
+        {
+          "absolute_distance": 0.0, 
+          "color": "None", 
+          "description": "Real start", 
+          "for_distance": 1.5, 
+          "instruction": "", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.5, 
+          "color": "None", 
+          "description": "Entry 2", 
+          "for_distance": 2.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 4.0, 
+          "color": "None", 
+          "description": "Entry 3", 
+          "for_distance": 4.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 8.0, 
+          "color": "None", 
+          "description": "Real end", 
+          "for_distance": null, 
+          "instruction": "", 
+          "modifier": "", 
+          "note": ""
+        }
+      ], 
+      "id": 12345, 
+      "length_mi": 8.0, 
+      "name": null
+    }
+  }, 
+  {
+    "name": "two_start_tags", 
+    "ok": true, 
+    "result": {
+      "elevation_gain_ft": null, 
+      "entries": [
+        {
+          "absolute_distance": 0.0, 
+          "color": "None", 
+          "description": "Second start", 
+          "for_distance": 1.5, 
+          "instruction": "", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 1.5, 
+          "color": "None", 
+          "description": "Entry 2", 
+          "for_distance": 3.5, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 5.0, 
+          "color": "None", 
+          "description": "Entry 4", 
+          "for_distance": 3.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }, 
+        {
+          "absolute_distance": 8.0, 
+          "color": "None", 
+          "description": "End of route", 
+          "for_distance": null, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }
+      ], 
+      "id": 12345, 
+      "length_mi": 8.0, 
+      "name": null
+    }
+  }, 
+  {
+    "name": "two_entry_route", 
+    "ok": true, 
+    "result": {
+      "elevation_gain_ft": null, 
+      "entries": [
+        {
+          "absolute_distance": 1.0, 
+          "color": "None", 
+          "description": "Only turn", 
+          "for_distance": 0.0, 
+          "instruction": "R", 
+          "modifier": "", 
+          "note": ""
+        }
+      ], 
+      "id": 1, 
+      "length_mi": 1.0, 
+      "name": null
+    }
+  }, 
+  {
+    "name": "empty_route", 
+    "ok": true, 
+    "result": {
+      "elevation_gain_ft": null, 
+      "entries": [], 
+      "id": 1, 
+      "length_mi": 0.0, 
+      "name": null
+    }
+  }
+]

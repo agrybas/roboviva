@@ -1,0 +1,17 @@
+# Build inputs and scratch, not source.
+
+# Pre-fetched Debian packages for the oracle image (~513MB).
+# Recreate with: harness/oracle/fetch_debs.sh
+oracle/.debcache/
+
+# Python venv used to run the py3 suite.
+# Recreate with: python3 -m venv harness/.venv && harness/.venv/bin/pip install -r harness/requirements-dev.txt
+.venv/
+
+# Raw PDFs from render tests. The asserted artifact is the .tex source plus the
+# committed PDF summary; these are only for eyeballing a failure.
+artifacts/
+
+__pycache__/
+*.py[cod]
+.pytest_cache/

@@ -1,0 +1,152 @@
+[
+  {
+    "name": "known_left",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Left"
+  },
+  {
+    "name": "known_slight_left",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Slight Left"
+  },
+  {
+    "name": "known_sharp_left",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Sharp Left"
+  },
+  {
+    "name": "known_right",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Right"
+  },
+  {
+    "name": "known_slight_right",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Slight Right"
+  },
+  {
+    "name": "known_sharp_right",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Sharp Right"
+  },
+  {
+    "name": "known_straight",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Straight"
+  },
+  {
+    "name": "known_food",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Food"
+  },
+  {
+    "name": "known_water",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Water"
+  },
+  {
+    "name": "known_danger",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Danger"
+  },
+  {
+    "name": "known_start",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Start"
+  },
+  {
+    "name": "known_end",
+    "why": "Mapped instruction string.",
+    "instruction_str": "End"
+  },
+  {
+    "name": "known_generic",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Generic"
+  },
+  {
+    "name": "known_control",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Control"
+  },
+  {
+    "name": "known_summit",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Summit"
+  },
+  {
+    "name": "known_4th_category",
+    "why": "Mapped instruction string.",
+    "instruction_str": "4th Category"
+  },
+  {
+    "name": "known_3rd_category",
+    "why": "Mapped instruction string.",
+    "instruction_str": "3rd Category"
+  },
+  {
+    "name": "known_2nd_category",
+    "why": "Mapped instruction string.",
+    "instruction_str": "2nd Category"
+  },
+  {
+    "name": "known_1st_category",
+    "why": "Mapped instruction string.",
+    "instruction_str": "1st Category"
+  },
+  {
+    "name": "known_hors_category",
+    "why": "Mapped instruction string.",
+    "instruction_str": "Hors Category"
+  },
+  {
+    "name": "known_first_aid",
+    "why": "Mapped instruction string.",
+    "instruction_str": "First Aid"
+  },
+  {
+    "name": "empty",
+    "why": "Empty string falls through to passthrough.",
+    "instruction_str": ""
+  },
+  {
+    "name": "unknown_custom",
+    "why": "Unrecognized -> returned verbatim (:294-296).",
+    "instruction_str": "Test Instruction"
+  },
+  {
+    "name": "real_uturn",
+    "why": "Route 55132669 and others. RWGPS emits 'Uturn'; there is no mapping, so it renders literally as \\textbf{Uturn}.",
+    "instruction_str": "Uturn"
+  },
+  {
+    "name": "real_climb",
+    "why": "Route 55132669 emits 'Climb'. Unmapped.",
+    "instruction_str": "Climb"
+  },
+  {
+    "name": "real_valley",
+    "why": "Route 55132669 emits 'Valley'. Unmapped.",
+    "instruction_str": "Valley"
+  },
+  {
+    "name": "real_lowercase_right",
+    "why": "Route 56819245 emits lowercase 'right'. The mapping is case-SENSITIVE, so this is NOT Instruction.RIGHT -- it passes through as the literal string and loses its gray row colour.",
+    "instruction_str": "right"
+  },
+  {
+    "name": "real_lowercase_left",
+    "why": "Route 56819245 emits lowercase 'left'.",
+    "instruction_str": "left"
+  },
+  {
+    "name": "case_upper_left",
+    "why": "Case sensitivity, upper.",
+    "instruction_str": "LEFT"
+  },
+  {
+    "name": "whitespace_padded",
+    "why": "No strip() anywhere -> passthrough.",
+    "instruction_str": " Left "
+  }
+]

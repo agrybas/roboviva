@@ -1,0 +1,215 @@
+[
+  {
+    "name": "happy_path",
+    "why": "One 200 with a well-formed body. Pins the request URL, which must contain the literal 'api_key=None' -- see api_key_omitted_breaks.",
+    "route_id": 123,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 100.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "conditional_request_sends_if_none_match",
+    "why": "A non-None etag is sent as If-None-Match (ridewithgps.py:91-92).",
+    "route_id": 123,
+    "etag": "W/\"cached\"",
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 100.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "etag_empty_string_not_sent",
+    "why": "The guard is `if etag:`, so an empty string sends NO header -- an empty cached etag silently becomes an unconditional request.",
+    "route_id": 123,
+    "etag": "",
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 100.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "not_modified_304",
+    "why": "304 returns (etag, None) and stops (ridewithgps.py:104-106). This is the whole point of the cache: no download and no pdflatex run.",
+    "route_id": 123,
+    "etag": "W/\"cached\"",
+    "script": [
+      {
+        "raise": "http",
+        "status": 304
+      }
+    ]
+  },
+  {
+    "name": "not_found_404",
+    "why": "Any non-304 HTTPError becomes RideWithGpsError('Unknown Route ID'), which the web layer turns into the 'not a valid route' page. Note a 500 from RideWithGPS is reported to the rider as a bad route id.",
+    "route_id": 123,
+    "etag": null,
+    "script": [
+      {
+        "raise": "http",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "name": "server_error_500_reported_as_bad_route",
+    "why": "Same handler as 404 -- the message blames the route id regardless.",
+    "route_id": 123,
+    "etag": null,
+    "script": [
+      {
+        "raise": "http",
+        "status": 500
+      }
+    ]
+  },
+  {
+    "name": "one_timeout_then_success",
+    "why": "socket.timeout is swallowed and the loop retries (ridewithgps.py:110).",
+    "route_id": 123,
+    "etag": null,
+    "script": [
+      {
+        "raise": "timeout"
+      },
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 100.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "two_timeouts_then_success",
+    "why": "Second retry still succeeds; Max_Attempts is 3.",
+    "route_id": 123,
+    "etag": null,
+    "script": [
+      {
+        "raise": "timeout"
+      },
+      {
+        "raise": "timeout"
+      },
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 100.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  },
+  {
+    "name": "three_timeouts_exhausts_retries",
+    "why": "All three attempts time out -> RideWithGpsError('No data ... after 3 tries') (ridewithgps.py:113-114).",
+    "route_id": 123,
+    "etag": null,
+    "script": [
+      {
+        "raise": "timeout"
+      },
+      {
+        "raise": "timeout"
+      },
+      {
+        "raise": "timeout"
+      }
+    ]
+  },
+  {
+    "name": "malformed_json",
+    "why": "json.loads failure -> RideWithGpsError with the raw body inlined into the message (ridewithgps.py:116-119).",
+    "route_id": 123,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{not json"
+      }
+    ]
+  },
+  {
+    "name": "empty_body",
+    "why": "An empty 200 body is falsy, so it takes the 'No data' path rather than the JSON-decode path (ridewithgps.py:113).",
+    "route_id": 123,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": ""
+      }
+    ]
+  },
+  {
+    "name": "api_key_omitted_breaks_parsing",
+    "why": "THE TRAP. Without api_key in the query string RideWithGPS returns a FLAT object -- name/course_points/distance at top level, no 'route' wrapper and no 'metrics'. The parser reads data['route'] at ridewithgps.py:122 and raises KeyError. A rewrite that 'cleans up' the stray api_key=None silently switches response shapes and breaks. Recorded as an executable warning.",
+    "route_id": 123,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"name\": \"R\", \"course_points\": [], \"distance\": 1609.0, \"elevation_gain\": 30.0}"
+      }
+    ]
+  },
+  {
+    "name": "missing_metrics",
+    "why": "Wrapped but without 'metrics' -> KeyError from ridewithgps.py:158.",
+    "route_id": 123,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": []}}"
+      }
+    ]
+  },
+  {
+    "name": "explicit_api_key",
+    "why": "Passing a real api_key changes the URL. Nothing in the repo ever does this, but the parameter exists.",
+    "route_id": 123,
+    "etag": null,
+    "api_key": "SECRET",
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "{\"route\": {\"name\": \"R\", \"course_points\": [{\"t\": \"Right\", \"n\": \"Turn right onto Foo\", \"d\": 100.0}], \"metrics\": {\"distance\": 1609.344, \"ele_gain\": 100.0}}, \"type\": \"route\"}"
+      }
+    ]
+  }
+]

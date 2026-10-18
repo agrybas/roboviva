@@ -1,0 +1,132 @@
+[
+  {
+    "name": "minimal", 
+    "ok": true, 
+    "result": " \\textbf{} &   0.0 &  &  \\\\ \\hline"
+  }, 
+  {
+    "name": "plain_right", 
+    "ok": true, 
+    "result": "\\rowcolor[gray]{0.8} \\textbf{R} &   1.0 & Foo St. &   2.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "with_note", 
+    "ok": true, 
+    "result": " \\textbf{R} &   1.0 & Foo St. \\newline \\textit{watch for gravel} &   2.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "note_without_description", 
+    "ok": true, 
+    "result": " \\textbf{} &   1.0 & Regroup here &  \\\\ \\hline"
+  }, 
+  {
+    "name": "whitespace_only_description", 
+    "ok": true, 
+    "result": " \\textbf{} &   1.0 &    Regroup here &  \\\\ \\hline"
+  }, 
+  {
+    "name": "for_distance_zero", 
+    "ok": true, 
+    "result": " \\textbf{R} &   1.0 & Foo &  \\\\ \\hline"
+  }, 
+  {
+    "name": "for_distance_none", 
+    "ok": true, 
+    "result": " \\textbf{R} &   1.0 & Foo &  \\\\ \\hline"
+  }, 
+  {
+    "name": "for_distance_rounding", 
+    "ok": true, 
+    "result": " \\textbf{R} &   1.0 & Foo &   0.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "distance_width", 
+    "ok": true, 
+    "result": " \\textbf{R} & 123.4 & Foo &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "yellow_row", 
+    "ok": true, 
+    "result": "\\rowcolor{yellow} \\Large \\danger  &   1.0 & Gravel section &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "gray_row", 
+    "ok": true, 
+    "result": "\\rowcolor[gray]{0.8} \\textbf{R} &   1.0 & Foo &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "modifier_quick", 
+    "ok": true, 
+    "result": " \\textbf{QR} &   1.0 & Foo &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "modifier_slight", 
+    "ok": true, 
+    "result": " \\textbf{BL} &   1.0 & Foo &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "climb_glyph", 
+    "ok": true, 
+    "result": " $\\underset{\\textbf{1}}{\\text{\\large \\Mountain}}$ &   1.0 & Big climb &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "summit_glyph", 
+    "ok": true, 
+    "result": " $\\underset{\\textbf{End}}{\\text{\\large \\Mountain}}$ &   1.0 & Top &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "first_aid_glyph", 
+    "ok": true, 
+    "result": " \\raisebox{-0.15em}{\\Plus}  &   1.0 & Clinic &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "escaping_in_description", 
+    "ok": true, 
+    "result": " \\textbf{R} &   1.0 & \\# \\& \\$ \\textunderscore  $|$ $<$ $\\Rightarrow$ \\{ \\} \\textbackslash cmd \\% &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "emphasis_in_description", 
+    "ok": true, 
+    "result": " \\textbf{R} &   1.0 & Turn at the \\textbf{big} red \\emph{barn} &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "emphasis_in_note", 
+    "ok": true, 
+    "result": " \\textbf{R} &   1.0 & Foo \\newline \\textit{\\textbf{Do not} miss this} &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "ampersand_would_break_the_table", 
+    "ok": true, 
+    "result": " \\textbf{R} &   1.0 & Smith \\& Wesson Ave &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "percent_would_comment_the_row", 
+    "ok": true, 
+    "result": " \\textbf{R} &   1.0 & 50\\% grade &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "zwsp_in_description", 
+    "ok": true, 
+    "result": " \\textbf{R} &   1.0 & Richardsville Rd/\\hspace{0pt}Sagamore Rd &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "unicode_description", 
+    "ok": true, 
+    "result": " \\textbf{R} &   1.0 & Rue de l'Église &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "custom_instruction", 
+    "ok": true, 
+    "result": " \\textbf{U-Turn} &   1.0 & Head back &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "custom_instruction_with_specials", 
+    "ok": true, 
+    "result": " \\textbf{R\\&D} &   1.0 & Foo &   1.0 \\\\ \\hline"
+  }, 
+  {
+    "name": "unmapped_uturn", 
+    "ok": true, 
+    "result": " \\textbf{Uturn} &   1.0 & U-Turn to return &   1.0 \\\\ \\hline"
+  }
+]

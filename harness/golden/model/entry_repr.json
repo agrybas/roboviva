@@ -1,0 +1,62 @@
+[
+  {
+    "name": "defaults", 
+    "ok": true, 
+    "result": "Entry[ |  0.00 |       |  |  | None]"
+  }, 
+  {
+    "name": "full", 
+    "ok": true, 
+    "result": "Entry[QR |  1.25 |  2.50 | Foo St. | watch the gravel | Gray]"
+  }, 
+  {
+    "name": "for_distance_none", 
+    "ok": true, 
+    "result": "Entry[L |  1.00 |       | Bar |  | None]"
+  }, 
+  {
+    "name": "for_distance_zero", 
+    "ok": true, 
+    "result": "Entry[L |  1.00 |       | Bar |  | None]"
+  }, 
+  {
+    "name": "for_distance_small", 
+    "ok": true, 
+    "result": "Entry[L |  1.00 |  0.01 | Bar |  | None]"
+  }, 
+  {
+    "name": "distance_from_string", 
+    "ok": true, 
+    "result": "Entry[L |  3.50 |       | Bar |  | None]"
+  }, 
+  {
+    "name": "distance_from_int", 
+    "ok": true, 
+    "result": "Entry[L |  4.00 |       | Bar |  | None]"
+  }, 
+  {
+    "name": "distance_negative", 
+    "ok": true, 
+    "result": "Entry[L | -1.50 |       | Bar |  | None]"
+  }, 
+  {
+    "name": "distance_large", 
+    "ok": true, 
+    "result": "Entry[L | 1234.57 |       | Bar |  | None]"
+  }, 
+  {
+    "name": "unicode_description", 
+    "ok": true, 
+    "result": "Entry[L |  1.00 |       | Rue de l'Église |  | None]"
+  }, 
+  {
+    "name": "zwsp_description", 
+    "ok": true, 
+    "result": "Entry[L |  1.00 |       | A/​B |  | None]"
+  }, 
+  {
+    "name": "custom_instruction", 
+    "ok": true, 
+    "result": "Entry[U-Turn |  1.00 |       | Bar |  | None]"
+  }
+]

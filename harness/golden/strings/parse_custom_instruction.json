@@ -1,0 +1,62 @@
+[
+  {
+    "name": "empty", 
+    "ok": true, 
+    "result": null
+  }, 
+  {
+    "name": "common", 
+    "ok": true, 
+    "result": "L/QR"
+  }, 
+  {
+    "name": "leading_whitespace", 
+    "ok": true, 
+    "result": "L/QR"
+  }, 
+  {
+    "name": "empty_brackets", 
+    "ok": true, 
+    "result": null
+  }, 
+  {
+    "name": "not_at_start", 
+    "ok": true, 
+    "result": null
+  }, 
+  {
+    "name": "second_bracket_ignored", 
+    "ok": true, 
+    "result": "L/QR"
+  }, 
+  {
+    "name": "start_tag", 
+    "ok": true, 
+    "result": "start"
+  }, 
+  {
+    "name": "end_tag_capitalized", 
+    "ok": true, 
+    "result": "End"
+  }, 
+  {
+    "name": "tag_only", 
+    "ok": true, 
+    "result": "U"
+  }, 
+  {
+    "name": "nested_brackets", 
+    "ok": true, 
+    "result": "a[b"
+  }, 
+  {
+    "name": "spaces_in_tag", 
+    "ok": true, 
+    "result": "Custom Instruction"
+  }, 
+  {
+    "name": "latex_special_in_tag", 
+    "ok": true, 
+    "result": "R&D"
+  }
+]

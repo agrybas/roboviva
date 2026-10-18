@@ -1,0 +1,340 @@
+[
+  {
+    "name": "minimal",
+    "why": "Empty everything -- the degenerate row.",
+    "entry": {
+      "instruction": "",
+      "description": "",
+      "absolute_distance": 0.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": null,
+      "color": "None"
+    }
+  },
+  {
+    "name": "plain_right",
+    "why": "The common case: a turn with a street name.",
+    "entry": {
+      "instruction": "R",
+      "description": "Foo St.",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 2.0,
+      "color": "Gray"
+    }
+  },
+  {
+    "name": "with_note",
+    "why": "A note is appended as ' \\newline \\textit{...}' (latex.py:125). Note latex_tests.py:139 still expects '\\textbf{Note:} \\emph{...}' -- that test is stale (commit 69ee4d1 'cleaner notes').",
+    "entry": {
+      "instruction": "R",
+      "description": "Foo St.",
+      "absolute_distance": 1.0,
+      "note": "watch for gravel",
+      "modifier": "",
+      "for_distance": 2.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "note_without_description",
+    "why": "When the description is blank the note REPLACES it rather than being appended (latex.py:121-123), so a note-only cue still fills the On column.",
+    "entry": {
+      "instruction": "",
+      "description": "",
+      "absolute_distance": 1.0,
+      "note": "Regroup here",
+      "modifier": "",
+      "for_distance": null,
+      "color": "None"
+    }
+  },
+  {
+    "name": "whitespace_only_description",
+    "why": "The check is `esc_description.strip() == ''`, so a description of spaces also promotes the note.",
+    "entry": {
+      "instruction": "",
+      "description": "   ",
+      "absolute_distance": 1.0,
+      "note": "Regroup here",
+      "modifier": "",
+      "for_distance": null,
+      "color": "None"
+    }
+  },
+  {
+    "name": "for_distance_zero",
+    "why": "A for_distance of exactly 0.0 is falsy, so the For column is EMPTY rather than '  0.0' (latex.py:126).",
+    "entry": {
+      "instruction": "R",
+      "description": "Foo",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 0.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "for_distance_none",
+    "why": "No for_distance -- the last row of a sheet.",
+    "entry": {
+      "instruction": "R",
+      "description": "Foo",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": null,
+      "color": "None"
+    }
+  },
+  {
+    "name": "for_distance_rounding",
+    "why": "The For column is '%5.1f', so sub-0.05 legs round to 0.0 while still being truthy.",
+    "entry": {
+      "instruction": "R",
+      "description": "Foo",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 0.04,
+      "color": "None"
+    }
+  },
+  {
+    "name": "distance_width",
+    "why": "The At column is '%5.1f'; a 3-digit distance consumes the padding.",
+    "entry": {
+      "instruction": "R",
+      "description": "Foo",
+      "absolute_distance": 123.4,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "yellow_row",
+    "why": "Danger and pit stops get a yellow \\rowcolor.",
+    "entry": {
+      "instruction": "!",
+      "description": "Gravel section",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "Yellow"
+    }
+  },
+  {
+    "name": "gray_row",
+    "why": "Right turns (and, via the missing-comma quirk, every Start/End/Generic row) get [gray]{0.8}.",
+    "entry": {
+      "instruction": "R",
+      "description": "Foo",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "Gray"
+    }
+  },
+  {
+    "name": "modifier_quick",
+    "why": "QUICK + RIGHT concatenates to 'QR'.",
+    "entry": {
+      "instruction": "R",
+      "description": "Foo",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "Q",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "modifier_slight",
+    "why": "SLIGHT + LEFT concatenates to 'BL'.",
+    "entry": {
+      "instruction": "L",
+      "description": "Foo",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "B",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "climb_glyph",
+    "why": "Climb categories render as a mountain glyph.",
+    "entry": {
+      "instruction": "C1",
+      "description": "Big climb",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "summit_glyph",
+    "why": "Summit shares the glyph with the label 'End'.",
+    "entry": {
+      "instruction": "^",
+      "description": "Top",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "first_aid_glyph",
+    "why": "First aid renders as a raised plus.",
+    "entry": {
+      "instruction": "+",
+      "description": "Clinic",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "escaping_in_description",
+    "why": "User text reaching the renderer: every LaTeX special must be neutralized before it hits pdflatex.",
+    "entry": {
+      "instruction": "R",
+      "description": "# & $ _ | < > { } \\cmd %",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "emphasis_in_description",
+    "why": "Markdown-ish emphasis survives escaping and becomes real LaTeX.",
+    "entry": {
+      "instruction": "R",
+      "description": "Turn at the **big** red *barn*",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "emphasis_in_note",
+    "why": "_format is applied to the note too (latex.py:130).",
+    "entry": {
+      "instruction": "R",
+      "description": "Foo",
+      "absolute_distance": 1.0,
+      "note": "**Do not** miss this",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "ampersand_would_break_the_table",
+    "why": "A raw '&' is a column separator; unescaped it would corrupt the row.",
+    "entry": {
+      "instruction": "R",
+      "description": "Smith & Wesson Ave",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "percent_would_comment_the_row",
+    "why": "A raw '%' would comment out the rest of the line, silently dropping the For column.",
+    "entry": {
+      "instruction": "R",
+      "description": "50% grade",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "zwsp_in_description",
+    "why": "RideWithGPS emits U+200B between joined street names; commit 2278d0d.",
+    "entry": {
+      "instruction": "R",
+      "description": "Richardsville Rd/​Sagamore Rd",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "unicode_description",
+    "why": "Accented Latin text.",
+    "entry": {
+      "instruction": "R",
+      "description": "Rue de l'Église",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "custom_instruction",
+    "why": "A [tag]-derived instruction renders bold in the Go column.",
+    "entry": {
+      "instruction": "U-Turn",
+      "description": "Head back",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "custom_instruction_with_specials",
+    "why": "The tag is user-controlled, so it is escaped like any other input.",
+    "entry": {
+      "instruction": "R&D",
+      "description": "Foo",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  },
+  {
+    "name": "unmapped_uturn",
+    "why": "How route 55132669's 'Uturn' type actually reaches the page.",
+    "entry": {
+      "instruction": "Uturn",
+      "description": "U-Turn to return",
+      "absolute_distance": 1.0,
+      "note": "",
+      "modifier": "",
+      "for_distance": 1.0,
+      "color": "None"
+    }
+  }
+]

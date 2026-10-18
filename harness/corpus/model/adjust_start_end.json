@@ -1,0 +1,835 @@
+[
+  {
+    "name": "no_tags",
+    "why": "Nothing tagged -- the route must be untouched.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 1",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 2",
+          "absolute_distance": 1.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 2.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 3",
+          "absolute_distance": 4.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 4",
+          "absolute_distance": 5.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 3.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "End of route",
+          "absolute_distance": 8.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 8.0,
+      "id": 12345,
+      "name": null,
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "start_only",
+    "why": "Matches cue_utils_tests.py test_AdjustStartAndEnd_startOnly.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 1",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 2",
+          "absolute_distance": 1.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 2.5,
+          "color": "None"
+        },
+        {
+          "instruction": "start",
+          "description": "foo",
+          "absolute_distance": 4.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 4",
+          "absolute_distance": 5.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 3.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "End of route",
+          "absolute_distance": 8.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 8.0,
+      "id": 12345,
+      "name": "Test Route",
+      "elevation_gain_ft": 1000.0
+    }
+  },
+  {
+    "name": "end_only",
+    "why": "Matches cue_utils_tests.py test_AdjustStartAndEnd_endOnly.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 1",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 2",
+          "absolute_distance": 1.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 2.5,
+          "color": "None"
+        },
+        {
+          "instruction": "end",
+          "description": "foo",
+          "absolute_distance": 4.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 4",
+          "absolute_distance": 5.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 3.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "End of route",
+          "absolute_distance": 8.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 8.0,
+      "id": 12345,
+      "name": "Test Route",
+      "elevation_gain_ft": 1000.0
+    }
+  },
+  {
+    "name": "start_uppercase",
+    "why": "The comparison lowercases (cue_utils.py:28), so '[START]' works.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 1",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 2",
+          "absolute_distance": 1.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 2.5,
+          "color": "None"
+        },
+        {
+          "instruction": "START",
+          "description": "foo",
+          "absolute_distance": 4.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 4",
+          "absolute_distance": 5.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 3.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "End of route",
+          "absolute_distance": 8.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 8.0,
+      "id": 12345,
+      "name": "Test Route",
+      "elevation_gain_ft": 1000.0
+    }
+  },
+  {
+    "name": "end_mixed_case",
+    "why": "Route 6260667 ships '[End]'.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 1",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 2",
+          "absolute_distance": 1.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 2.5,
+          "color": "None"
+        },
+        {
+          "instruction": "End",
+          "description": "foo",
+          "absolute_distance": 4.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 4",
+          "absolute_distance": 5.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 3.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "End of route",
+          "absolute_distance": 8.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 8.0,
+      "id": 12345,
+      "name": "Test Route",
+      "elevation_gain_ft": 1000.0
+    }
+  },
+  {
+    "name": "start_at_index_1",
+    "why": "Tag adjacent to the synthesized first entry.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "start",
+          "description": "foo",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 2",
+          "absolute_distance": 1.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 2.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 3",
+          "absolute_distance": 4.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 4",
+          "absolute_distance": 5.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 3.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "End of route",
+          "absolute_distance": 8.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 8.0,
+      "id": 12345,
+      "name": "Test Route",
+      "elevation_gain_ft": 1000.0
+    }
+  },
+  {
+    "name": "end_at_penultimate",
+    "why": "Tag directly before the last entry.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 1",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 2",
+          "absolute_distance": 1.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 2.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 3",
+          "absolute_distance": 4.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "end",
+          "description": "foo",
+          "absolute_distance": 5.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 3.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "End of route",
+          "absolute_distance": 8.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 8.0,
+      "id": 12345,
+      "name": "Test Route",
+      "elevation_gain_ft": 1000.0
+    }
+  },
+  {
+    "name": "end_at_last_index",
+    "why": "The 'end' branch is guarded by `index != len(entries)-1` (cue_utils.py:37), so a tag on the LAST entry is ignored entirely.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 1",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 2",
+          "absolute_distance": 1.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 2.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 3",
+          "absolute_distance": 4.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 4",
+          "absolute_distance": 5.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 3.0,
+          "color": "None"
+        },
+        {
+          "instruction": "end",
+          "description": "foo",
+          "absolute_distance": 8.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 8.0,
+      "id": 12345,
+      "name": "Test Route",
+      "elevation_gain_ft": 1000.0
+    }
+  },
+  {
+    "name": "start_at_last_index",
+    "why": "The 'start' branch has NO such guard and reaches entries[index+1] (cue_utils.py:34) -- expected to raise IndexError. Recording the exception is the point.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 1",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 2",
+          "absolute_distance": 1.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 2.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 3",
+          "absolute_distance": 4.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 4",
+          "absolute_distance": 5.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 3.0,
+          "color": "None"
+        },
+        {
+          "instruction": "start",
+          "description": "foo",
+          "absolute_distance": 8.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 8.0,
+      "id": 12345,
+      "name": "Test Route",
+      "elevation_gain_ft": 1000.0
+    }
+  },
+  {
+    "name": "start_at_index_0",
+    "why": "Tagging the first entry makes the function assign the entry to itself and then delete index 0.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "start",
+          "description": "foo",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 1",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 2",
+          "absolute_distance": 1.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 2.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 3",
+          "absolute_distance": 4.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 4",
+          "absolute_distance": 5.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 3.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "End of route",
+          "absolute_distance": 8.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 8.0,
+      "id": 12345,
+      "name": "Test Route",
+      "elevation_gain_ft": 1000.0
+    }
+  },
+  {
+    "name": "both_start_and_end",
+    "why": "Both tags present, start before end.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "start",
+          "description": "Real start",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 2",
+          "absolute_distance": 1.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 2.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 3",
+          "absolute_distance": 4.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "end",
+          "description": "Real end",
+          "absolute_distance": 5.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 3.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "End of route",
+          "absolute_distance": 8.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 8.0,
+      "id": 12345,
+      "name": null,
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "two_start_tags",
+    "why": "Two 'start' tags. The loop mutates the list it is iterating, so the second tag's index has shifted by the time it is reached.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "R",
+          "description": "Start of route",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "start",
+          "description": "First start",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 0.5,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 2",
+          "absolute_distance": 1.5,
+          "note": "",
+          "modifier": "",
+          "for_distance": 2.5,
+          "color": "None"
+        },
+        {
+          "instruction": "start",
+          "description": "Second start",
+          "absolute_distance": 4.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Entry 4",
+          "absolute_distance": 5.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 3.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "End of route",
+          "absolute_distance": 8.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 8.0,
+      "id": 12345,
+      "name": null,
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "two_entry_route",
+    "why": "Smallest route where a tag is even meaningful.",
+    "route": {
+      "entries": [
+        {
+          "instruction": "start",
+          "description": "Real start",
+          "absolute_distance": 0.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": 1.0,
+          "color": "None"
+        },
+        {
+          "instruction": "R",
+          "description": "Only turn",
+          "absolute_distance": 1.0,
+          "note": "",
+          "modifier": "",
+          "for_distance": null,
+          "color": "None"
+        }
+      ],
+      "length_mi": 1.0,
+      "id": 1,
+      "name": null,
+      "elevation_gain_ft": null
+    }
+  },
+  {
+    "name": "empty_route",
+    "why": "No entries at all -- the loop body never runs.",
+    "route": {
+      "entries": [],
+      "length_mi": 0.0,
+      "id": 1,
+      "name": null,
+      "elevation_gain_ft": null
+    }
+  }
+]

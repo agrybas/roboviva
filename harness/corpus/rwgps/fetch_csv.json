@@ -1,0 +1,89 @@
+[
+  {
+    "name": "basic",
+    "why": "The CSV path builds a Route with NO name and NO elevation, and does NOT call AdjustStartAndEnd (ridewithgps.py:235-238) -- materially different output from the JSON path for the same route.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "Type,Notes,Distance,Elevation,Description\nStart,Start of route,0.0,0,\nRight,Turn right on A,1.0,10,\nLeft,Turn left on B,2.0,20,note here"
+      }
+    ]
+  },
+  {
+    "name": "header_pruned",
+    "why": "rows[1:] drops the first row unconditionally (ridewithgps.py:229), so a headerless CSV silently loses its first cue.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "Start,Start of route,0.0,0,\nRight,Turn right on A,1.0,10,"
+      }
+    ]
+  },
+  {
+    "name": "embedded_newline_in_quoted_field",
+    "why": "The body is split on '\\n' BEFORE csv.DictReader sees it (ridewithgps.py:226). DictReader still reassembles the quoted field by pulling the next list item, so the row is NOT torn apart -- but the newline inside the field is silently swallowed, and 'Turn right,\\nthen immediately left' arrives as 'Turn right,then immediately left' with no separator.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "Type,Notes,Distance,Elevation,Description\nRight,\"Turn right,\nthen immediately left\",1.0,10,"
+      }
+    ]
+  },
+  {
+    "name": "trailing_blank_line",
+    "why": "A trailing newline produces an empty final row.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "Type,Notes,Distance,Elevation,Description\nRight,A,1.0,10,\n"
+      }
+    ]
+  },
+  {
+    "name": "not_modified_304",
+    "why": "Same conditional-GET contract as the JSON path.",
+    "route_id": 1,
+    "etag": "W/\"cached\"",
+    "script": [
+      {
+        "raise": "http",
+        "status": 304
+      }
+    ]
+  },
+  {
+    "name": "html_instead_of_csv",
+    "why": "What the live endpoint returns TODAY: ridewithgps.com/routes/<id>.csv serves an HTML page, with or without api_key, so this function is dead against the real service. It does fail rather than producing garbage -- but with a bare TypeError from float(None), not a RideWithGpsError, so the web layer reports it as the generic 0xFA 'Error querying RideWithGPS' page.",
+    "route_id": 1,
+    "etag": null,
+    "script": [
+      {
+        "status": 200,
+        "headers": {
+          "ETag": "W/\"deadbeef\""
+        },
+        "body": "<!DOCTYPE html>\n<html class='' lang='en'>\n<head>\n<title>Ride with GPS</title>\n</head>\n</html>"
+      }
+    ]
+  }
+]
